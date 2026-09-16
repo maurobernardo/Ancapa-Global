@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { platforms, opportunities } from "@/lib/data";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapa-global.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
