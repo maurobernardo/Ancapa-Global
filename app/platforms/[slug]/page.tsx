@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -5,6 +6,11 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { platforms } from "@/lib/data";
 
 export function generateStaticParams(){ return platforms.map(p=>({slug:p.slug})); }
+
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}): Promise<Metadata> {
+ const {slug}=await params; const p=platforms.find(x=>x.slug===slug); if(!p) return {};
+ return { title: p.name, description: p.description, alternates: { canonical: `/platforms/${p.slug}` } };
+}
 
 export default async function PlatformPage({params}:{params:Promise<{slug:string}>}){
  const {slug}=await params; const p=platforms.find(x=>x.slug===slug); if(!p) notFound();

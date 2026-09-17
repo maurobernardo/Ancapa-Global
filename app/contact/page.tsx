@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { MapPin, Clock, Globe2 } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import { company } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Start a strategic conversation with ANCAPA Global Partners for investment opportunities, capital partnerships, market entry or project development.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function Contact(){
  return <main className="container pt-8 pb-14 md:pt-10 md:pb-16">

@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   keywords: ["ANCAPA Global Partners", "U.S. investment platform", "Africa investment", "Caribbean investment", "Southeast Asia investment", "capital raising", "project finance", "energy infrastructure", "critical minerals", "market entry advisory"],
   authors: [{ name: "ANCAPA Global Partners" }],
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-  alternates: { canonical: "/" },
   icons: { icon: "/icone.jpeg", shortcut: "/icone.jpeg", apple: "/icone.jpeg" },
   manifest: "/manifest.webmanifest",
   openGraph: {

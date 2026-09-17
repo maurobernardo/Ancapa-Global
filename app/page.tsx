@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Network, TrendingUp, ShieldCheck, MapPinned, Building, Handshake, Compass, Target } from "lucide-react";
 import { company, platforms, regions, opportunities, insights, operatingModel } from "@/lib/data";
 import ContactForm from "@/components/contact-form";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home(){
  return <>

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Network, ShieldCheck, TrendingUp } from "lucide-react";
 import { regions } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Markets",
+  description: "ANCAPA's market strategy across Africa, the Caribbean and Southeast Asia — growth corridors where structural demand and strategic relevance are converging.",
+  alternates: { canonical: "/markets" },
+};
 
 export default function Markets(){
  return <main>

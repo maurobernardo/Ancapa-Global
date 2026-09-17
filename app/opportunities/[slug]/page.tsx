@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { opportunities } from "@/lib/data";
 
 export function generateStaticParams(){ return opportunities.map(o=>({slug:o.slug})); }
+
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}): Promise<Metadata> {
+ const {slug}=await params; const o=opportunities.find(x=>x.slug===slug); if(!o) return {};
+ return { title: o.title, description: o.summary, alternates: { canonical: `/opportunities/${o.slug}` } };
+}
 
 export default async function OpportunityPage({ params }: { params: Promise<{slug:string}> }){
  const { slug } = await params;
