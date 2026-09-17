@@ -15,7 +15,7 @@ const navLinks: [string, string, React.ComponentType<{ className?: string }>][] 
 ];
 
 function NavLink({ href, icon: Icon, label, active }: { href: string; icon: React.ComponentType<{ className?: string }>; label: string; active: boolean }) {
-  return <Link href={href} className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 transition text-[.83rem] ${active ? "bg-navy text-white font-semibold shadow-[0_6px_16px_-8px_rgba(8,35,58,.55)]" : "text-slate-700 hover:text-navy hover:bg-slate-100"}`}><Icon className="h-3.5 w-3.5"/>{label}</Link>;
+  return <Link href={href} className={`flex items-center gap-1.5 rounded-full px-3 py-2 transition text-[.92rem] ${active ? "bg-navy text-white font-semibold shadow-[0_6px_16px_-8px_rgba(8,35,58,.55)]" : "text-slate-700 hover:text-navy hover:bg-slate-100"}`}><Icon className="h-4 w-4"/>{label}</Link>;
 }
 
 export function Header() {
@@ -23,12 +23,12 @@ export function Header() {
   const pathname = usePathname();
   const isPlatforms = pathname.startsWith("/platforms");
   return <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-    <div className="container flex h-24 md:h-32 items-center justify-between">
+    <div className="container flex h-20 md:h-24 items-center justify-between">
       <Logo />
       <nav className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-700">
         <NavLink href="/" icon={Home} label="Home" active={pathname === "/"}/>
         <div className="relative group/platforms">
-          <button className={`flex items-center gap-1.5 rounded-full px-2.5 py-1.5 transition text-[.83rem] ${isPlatforms ? "bg-navy text-white font-semibold shadow-[0_6px_16px_-8px_rgba(8,35,58,.55)]" : "text-slate-700 hover:text-navy hover:bg-slate-100"}`}><LayoutGrid className="h-3.5 w-3.5"/>Platforms<ChevronDown className="h-3.5 w-3.5 transition group-hover/platforms:rotate-180"/></button>
+          <button className={`flex items-center gap-1.5 rounded-full px-3 py-2 transition text-[.92rem] ${isPlatforms ? "bg-navy text-white font-semibold shadow-[0_6px_16px_-8px_rgba(8,35,58,.55)]" : "text-slate-700 hover:text-navy hover:bg-slate-100"}`}><LayoutGrid className="h-4 w-4"/>Platforms<ChevronDown className="h-4 w-4 transition group-hover/platforms:rotate-180"/></button>
           <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-80 opacity-0 invisible translate-y-1 group-hover/platforms:opacity-100 group-hover/platforms:visible group-hover/platforms:translate-y-0 transition-all duration-200 z-50">
             <div className="card bg-white p-3 shadow-2xl border-slate-100">
               <div className="px-2 pb-2 pt-1 text-[.68rem] font-bold uppercase tracking-[.18em] text-slate-400">Our platforms</div>
@@ -39,7 +39,7 @@ export function Header() {
           </div>
         </div>
         {navLinks.slice(1).map(([label, href, Icon])=><NavLink key={href} href={href} icon={Icon} label={label} active={pathname === href}/>)}
-        <Link href="/contact" className="btn btn-dark ml-3 px-4! py-2! text-xs!">Partner with ANCAPA</Link>
+        <Link href="/contact" className="btn btn-dark ml-3 px-5! py-2.5! text-sm!">Partner with ANCAPA</Link>
       </nav>
       <button className="lg:hidden" onClick={() => setOpen(v=>!v)} aria-label="Toggle navigation">{open?<X/>:<Menu/>}</button>
     </div>
