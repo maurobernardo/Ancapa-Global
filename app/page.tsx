@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Network, TrendingUp, ShieldCheck, MapPinned, Building, Handshake, Compass, Target, Mail } from "lucide-react";
+import { ArrowRight, Network, TrendingUp, ShieldCheck, MapPinned, Building, Handshake, Compass, Target } from "lucide-react";
 import { company, platforms, regions, opportunities, insights, operatingModel } from "@/lib/data";
 import ContactForm from "@/components/contact-form";
 
@@ -41,6 +41,6 @@ export default function Home(){
 
   <section id="partners" className="border-y border-slate-200"><div className="container py-20 grid md:grid-cols-3 gap-8">{[[Building,"Investors","Access curated opportunities and local execution support."],[Handshake,"Project sponsors","Shape credible investment propositions and connect with strategic capital."],[MapPinned,"Market partners","Build cross-border partnerships with grounded intelligence and execution capacity."]].map(([Icon,title,text]:any)=><div key={title} className="flex gap-5"><div className="h-11 w-11 rounded-xl bg-navy/5 text-navy flex items-center justify-center shrink-0"><Icon className="h-5 w-5"/></div><div><h3 className="font-semibold text-navy">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></div></div>)}</div></section>
 
-  <section id="contact" className="bg-navy text-white"><div className="container py-14 md:py-16 grid lg:grid-cols-[.8fr_1.2fr] gap-16"><div><p className="eyebrow !text-gold">Partner with ANCAPA</p><h2 className="display text-4xl md:text-5xl mt-4">Bring us the opportunity, or the capital mandate.</h2><p className="mt-6 text-slate-300 leading-8">We engage with investors, project sponsors, corporates, governments and strategic partners seeking credible pathways into our focus markets.</p><div className="mt-8 text-sm text-slate-400">{company.descriptor}</div><a href={`mailto:${company.email}`} className="chip mt-6 w-fit text-white/90 border-white/20! bg-white/10!"><Mail className="h-4 w-4"/>{company.email}</a></div><div className="bg-white rounded-3xl p-6 md:p-8 text-slate-900"><ContactForm compact /></div></div></section>
+  <section id="contact" className="bg-navy text-white"><div className="container py-14 md:py-16 grid lg:grid-cols-[.8fr_1.2fr] gap-16"><div><p className="eyebrow !text-gold">Partner with ANCAPA</p><h2 className="display text-4xl md:text-5xl mt-4">Bring us the opportunity, or the capital mandate.</h2><p className="mt-6 text-slate-300 leading-8">We engage with investors, project sponsors, corporates, governments and strategic partners seeking credible pathways into our focus markets.</p><div className="mt-8 text-sm text-slate-400">{company.descriptor}</div><div className="chip mt-6 w-fit text-white/90 border-white/20! bg-white/10!"><MapPinned className="h-4 w-4"/>{company.location}</div></div><div className="bg-white rounded-3xl p-6 md:p-8 text-slate-900"><ContactForm compact /></div></div></section>
  </>
 }

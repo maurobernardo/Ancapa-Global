@@ -6,7 +6,7 @@ export const company = {
   founded: 2019,
   tagline: "Global Capital. Local Execution.",
   descriptor: "Capital. Energy. Resources. Digital. Infrastructure.",
-  email: "ainguane@ancapaglobal.com",
+  location: "San Diego, California, USA",
   summary:
     "A U.S.-anchored investment and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia.",
 };
