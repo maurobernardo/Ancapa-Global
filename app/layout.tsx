@@ -41,7 +41,7 @@ const jsonLd = {
   name: company.name,
   legalName: company.legal,
   url: siteUrl,
-  logo: `${siteUrl}/ancapa-logo.jpeg`,
+  logo: `${siteUrl}/ancapa-logo.png`,
   foundingDate: String(company.founded),
   description,
   slogan: company.tagline,
