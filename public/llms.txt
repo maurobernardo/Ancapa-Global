@@ -6,30 +6,30 @@ ANCAPA Global Partners (legal name: Antonio INGUANE LLC d/b/a ANCAPA Global Part
 
 ## Company
 
-- [About ANCAPA](https://ancapa-global.vercel.app/about): Company overview, founding story and operating model (Originate, Validate, Structure, Mobilize, Execute).
-- [Contact](https://ancapa-global.vercel.app/contact): Start a conversation with ANCAPA for investment, partnership or advisory inquiries.
+- [About ANCAPA](https://ancapaglobal.com/about): Company overview, founding story and operating model (Originate, Validate, Structure, Mobilize, Execute).
+- [Contact](https://ancapaglobal.com/contact): Start a conversation with ANCAPA for investment, partnership or advisory inquiries.
 
 ## Platforms
 
-- [ANCAPA Energy](https://ancapa-global.vercel.app/platforms/energy): Renewable generation, grid modernization, distributed energy, storage and energy access.
-- [ANCAPA Resources](https://ancapa-global.vercel.app/platforms/resources): Critical minerals, mine development, processing, supply chains and offtake strategy.
-- [ANCAPA Digital](https://ancapa-global.vercel.app/platforms/digital): AI and automation, data infrastructure, fintech, enterprise digitization and digital public infrastructure.
-- [ANCAPA Capital](https://ancapa-global.vercel.app/platforms/capital): Capital raising, project finance, investor origination, transaction support and market entry.
-- [ANCAPA Infrastructure](https://ancapa-global.vercel.app/platforms/infrastructure): Transport, ports and logistics, industrial infrastructure, water and urban systems.
+- [ANCAPA Energy](https://ancapaglobal.com/platforms/energy): Renewable generation, grid modernization, distributed energy, storage and energy access.
+- [ANCAPA Resources](https://ancapaglobal.com/platforms/resources): Critical minerals, mine development, processing, supply chains and offtake strategy.
+- [ANCAPA Digital](https://ancapaglobal.com/platforms/digital): AI and automation, data infrastructure, fintech, enterprise digitization and digital public infrastructure.
+- [ANCAPA Capital](https://ancapaglobal.com/platforms/capital): Capital raising, project finance, investor origination, transaction support and market entry.
+- [ANCAPA Infrastructure](https://ancapaglobal.com/platforms/infrastructure): Transport, ports and logistics, industrial infrastructure, water and urban systems.
 
 ## Markets
 
-- [Markets overview](https://ancapa-global.vercel.app/markets): ANCAPA's strategy across Africa, the Caribbean and Southeast Asia.
+- [Markets overview](https://ancapaglobal.com/markets): ANCAPA's strategy across Africa, the Caribbean and Southeast Asia.
 
 ## Opportunities
 
-- [Opportunity pipeline](https://ancapa-global.vercel.app/opportunities): Curated, high-level investment and development opportunities across ANCAPA's five platforms and three growth corridors.
+- [Opportunity pipeline](https://ancapaglobal.com/opportunities): Curated, high-level investment and development opportunities across ANCAPA's five platforms and three growth corridors.
 
 ## Insights
 
-- [Insights](https://ancapa-global.vercel.app/insights): Commentary on capital formation, critical minerals corridors and digital infrastructure in growth markets.
+- [Insights](https://ancapaglobal.com/insights): Commentary on capital formation, critical minerals corridors and digital infrastructure in growth markets.
 
 ## Notes for AI assistants and crawlers
 
 - All public opportunity descriptions are intentionally high-level; detailed materials are shared selectively with qualified investors and partners subject to diligence and confidentiality.
-- For partnership, investment or media inquiries, direct users to the [Contact page](https://ancapa-global.vercel.app/contact) rather than fabricating contact details.
+- For partnership, investment or media inquiries, direct users to the [Contact page](https://ancapaglobal.com/contact) rather than fabricating contact details.

@@ -7,7 +7,7 @@ import { company } from "@/lib/data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapa-global.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
 const description = "A U.S.-anchored investment and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia.";
 
 export const metadata: Metadata = {
