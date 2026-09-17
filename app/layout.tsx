@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   authors: [{ name: "ANCAPA Global Partners" }],
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   alternates: { canonical: "/" },
-  icons: { icon: "/icon", apple: "/apple-icon" },
+  icons: { icon: "/icone.jpeg", shortcut: "/icone.jpeg", apple: "/icone.jpeg" },
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",

@@ -25,7 +25,7 @@ export function Header() {
   const pathname = usePathname();
   const isPlatforms = pathname.startsWith("/platforms");
   return <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-    <div className="container flex h-20 items-center justify-between">
+    <div className="container flex h-20 md:h-24 items-center justify-between">
       <Logo />
       <nav className="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-700">
         <NavLink href="/" icon={Home} label="Home" active={pathname === "/"}/>

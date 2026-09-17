@@ -20,8 +20,11 @@ npm run dev
 - `GET /api/insights` — insight feed
 - `POST /api/contact` — validated inquiry endpoint with honeypot spam protection
 
+### Contact form email delivery
+Set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER` and `SMTP_PASS` to the `ainguane@ancapaglobal.com` mailbox credentials (available in the Hostinger email panel, typically `smtp.hostinger.com:465`) so inquiries from `/contact` and the homepage form are emailed to `CONTACT_TO_EMAIL` (defaults to `ainguane@ancapaglobal.com`). Without SMTP credentials set, submissions are only logged server-side.
+
 ### CRM / email integration
-Set `CONTACT_WEBHOOK_URL` in production to a HubSpot/Zapier/Make/custom CRM intake endpoint. If unset, submissions are logged server-side for development.
+Optionally also set `CONTACT_WEBHOOK_URL` to a HubSpot/Zapier/Make/custom CRM intake endpoint to forward every inquiry there in addition to email.
 
 ### Site URL
 Set `NEXT_PUBLIC_SITE_URL=https://ancapaglobal.com` (production domain, hosted on Hostinger) for sitemap, robots, canonical and Open Graph generation.
