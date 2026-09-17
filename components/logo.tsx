@@ -7,8 +7,8 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       <Image
         src="/ancapa-logo.png"
         alt="ANCAPA Global Partners"
-        width={1294}
-        height={1294}
+        width={500}
+        height={500}
         priority
         className={compact ? "h-8 w-auto object-contain" : "h-14 md:h-[84px] w-auto object-contain"}
       />
