@@ -28,7 +28,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 28, letterSpacing: 4, fontWeight: 700 }}>ANCAPA GLOBAL PARTNERS</div>
         </div>
         <div style={{ display: "flex", fontSize: 56, fontWeight: 700, marginTop: 48, maxWidth: 980, lineHeight: 1.15 }}>
-          Connecting U.S. capital to global growth markets.
+          Bridging U.S. Capital and Global Growth Markets.
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#b99758", marginTop: 32, letterSpacing: 2 }}>
           {company.tagline}
