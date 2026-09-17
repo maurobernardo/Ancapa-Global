@@ -10,7 +10,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
         width={1450}
         height={1092}
         priority
-        className={compact ? "h-10 w-auto object-contain" : "h-14 md:h-20 w-auto object-contain"}
+        className={compact ? "h-10 w-auto object-contain" : "h-[76px] md:h-[94px] w-auto object-contain"}
       />
     </Link>
   );
