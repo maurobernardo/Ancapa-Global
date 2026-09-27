@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Clock, CheckCircle2 } from "lucide-react";
 import { insights, company } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
+import { ReadingProgress } from "@/components/reading-progress";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
 
@@ -40,6 +41,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
   };
 
   return <main className="bg-white">
+    <ReadingProgress />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
     {/* Hero */}
@@ -76,7 +78,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     <article className="container py-14 md:py-20">
       <div className="max-w-5xl grid md:grid-cols-[1fr_2.4fr] gap-10 items-start">
         {i.takeaways && <Reveal className="md:sticky md:top-28 order-2 md:order-1">
-          <div className="card p-6 bg-[#f7f5ef] border-none">
+          <div className="card p-6 bg-[#f7f5ef] border-none hover:-translate-y-1">
             <p className="text-[.68rem] font-bold uppercase tracking-[.18em] text-gold">Key takeaways</p>
             <ul className="mt-4 space-y-4">
               {i.takeaways.map((t, idx) => <li key={idx} className="flex gap-3 text-sm leading-6 text-slate-700"><CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-navy" />{t}</li>)}
@@ -90,7 +92,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
               {block.h && <h2 className="flex items-baseline gap-3"><span className="text-gold text-base font-bold tabular-nums">{String(idx).padStart(2, "0")}</span>{block.h}</h2>}
               {block.p.map((par, pi) => <p key={pi} className={idx === 0 && pi === 0 ? "first-letter:text-6xl first-letter:font-bold first-letter:text-navy first-letter:mr-2 first-letter:float-left first-letter:leading-[0.85]" : undefined}>{par}</p>)}
             </Reveal>
-            {block.quote && <Reveal className="my-8 md:pl-6 md:border-l-2 border-gold">
+            {block.quote && <Reveal className="my-8 md:pl-6 md:border-l-2 border-gold transition-transform hover:translate-x-1">
               <p className="display text-2xl md:text-3xl leading-snug text-navy">{block.quote}</p>
             </Reveal>}
           </div>)}
@@ -109,7 +111,10 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         </div>
       </Reveal>
 
-      {i.sourceNote && <p className="max-w-5xl mt-8 text-xs text-slate-400">{i.sourceNote}</p>}
+      {i.sourceNote && <div className="max-w-5xl mt-8 rounded-2xl border border-slate-200 bg-[#f7f5ef] px-5 py-4 flex items-start gap-3">
+        <span className="eyebrow shrink-0 !text-navy">Source</span>
+        <p className="text-sm text-slate-700 leading-6">{i.sourceNote}</p>
+      </div>}
     </article>
   </main>;
 }

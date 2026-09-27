@@ -3,7 +3,7 @@ import { company, operatingModel } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "ANCAPA Global Partners is a U.S.-anchored investment and strategic development platform. Learn about our founding, mission and Originate-Validate-Structure-Mobilize-Execute operating model.",
+  description: "ANCAPA Global Partners is a U.S.-anchored investment consulting and strategic development platform. Learn about our founding, mission and Originate-Validate-Structure-Mobilize-Execute operating model.",
   alternates: { canonical: "/about" },
 };
 

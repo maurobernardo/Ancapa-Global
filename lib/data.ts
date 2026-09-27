@@ -8,7 +8,7 @@ export const company = {
   descriptor: "Capital. Energy. Resources. Digital. Infrastructure.",
   location: "San Diego, California, USA",
   summary:
-    "A U.S.-anchored investment and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia.",
+    "A U.S.-anchored investment consulting and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia.",
 };
 
 export const platforms = [

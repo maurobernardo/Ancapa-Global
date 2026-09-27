@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: company.name,
     short_name: "ANCAPA",
-    description: "A U.S.-anchored investment and strategic development platform connecting capital, technology and operating partners across Africa, the Caribbean and Southeast Asia.",
+    description: "A U.S.-anchored investment consulting and strategic development platform connecting capital, technology and operating partners across Africa, the Caribbean and Southeast Asia.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
