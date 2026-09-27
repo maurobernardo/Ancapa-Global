@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { insights } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -7,4 +9,4 @@ export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
 };
 
-export default function Insights(){return <main className="container pt-8 pb-14 md:pt-10 md:pb-16"><div className="max-w-3xl"><p className="eyebrow">Insights</p><h1 className="display text-5xl md:text-6xl text-navy mt-4">Intelligence for capital and strategic markets.</h1><p className="mt-6 text-lg leading-8 text-slate-600">Short perspectives on the sectors, corridors and execution questions shaping investment across ANCAPA's focus markets.</p></div><div className="grid md:grid-cols-3 gap-5 mt-12">{insights.map(i=><article key={i.slug} className="card p-7"><div className="text-xs uppercase tracking-widest text-gold">{i.category}</div><h2 className="text-xl font-semibold text-navy mt-4 leading-7">{i.title}</h2><p className="mt-4 text-sm leading-6 text-slate-600">{i.excerpt}</p><div className="mt-8 text-xs text-slate-400">{i.date}</div></article>)}</div></main>}
+export default function Insights(){return <main className="container pt-8 pb-14 md:pt-10 md:pb-16"><div className="max-w-3xl"><p className="eyebrow">Insights</p><h1 className="display text-5xl md:text-6xl text-navy mt-4">Intelligence for capital and strategic markets.</h1><p className="mt-6 text-lg leading-8 text-slate-600">Short perspectives on the sectors, corridors and execution questions shaping investment across ANCAPA's focus markets.</p></div><div className="grid md:grid-cols-3 gap-5 mt-12">{insights.map(i=>{const body=<><div className="text-xs uppercase tracking-widest text-gold">{i.category}</div><h2 className="text-xl font-semibold text-navy mt-4 leading-7">{i.title}</h2><p className="mt-4 text-sm leading-6 text-slate-600">{i.excerpt}</p><div className="mt-8 flex items-center justify-between text-xs text-slate-400"><span>{i.date}</span>{i.body && <span className="chip text-navy py-1.5 px-3">Read article <ArrowRight className="h-3.5 w-3.5"/></span>}</div></>; return i.body ? <Link key={i.slug} href={`/insights/${i.slug}`} className="card p-7 flex flex-col hover:-translate-y-1 transition">{body}</Link> : <article key={i.slug} className="card p-7 flex flex-col">{body}</article>})}</div></main>}

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { platforms, opportunities } from "@/lib/data";
+import { platforms, opportunities, insights } from "@/lib/data";
 
 const base = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
 
@@ -17,5 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...platforms.map((p) => ({ url: `${base}/platforms/${p.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 })),
     ...opportunities.map((o) => ({ url: `${base}/opportunities/${o.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...insights.filter((i) => i.body).map((i) => ({ url: `${base}/insights/${i.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 })),
   ];
 }

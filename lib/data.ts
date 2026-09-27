@@ -34,7 +34,35 @@ export const opportunities = [
 
 export const insights = [
   { slug: "us-capital-growth-markets", category: "Investment Thesis", date: "September 2026", title: "Why U.S. capital needs stronger origination in growth markets", excerpt: "Capital is available, but investable pipelines remain fragmented. ANCAPA focuses on the bridge between opportunity, local execution and investor readiness." },
-  { slug: "critical-minerals-corridors", category: "Resources", date: "September 2026", title: "Critical minerals are becoming corridor investments", excerpt: "The investable proposition increasingly extends beyond the mine to power, processing, logistics, offtake and policy alignment." },
+  {
+    slug: "critical-minerals-corridors",
+    category: "Resources",
+    date: "September 2026",
+    title: "From minerals diplomacy to investable projects",
+    excerpt: "Africa's mineral potential will draw lasting U.S. investment when sponsors can show credible projects, viable infrastructure and a clear route to market.",
+    dek: "Africa's mineral potential will draw lasting U.S. investment when sponsors can show credible projects, viable infrastructure and a clear route to market.",
+    readTime: "5 min read",
+    body: [
+      { p: ["The September 2026 CSIS forum on U.S.-Africa minerals diplomacy put a practical issue at the center of the discussion: how to move strategic interest into financed and operating projects. African governments seek more local value from mineral development, while U.S. companies and institutions seek reliable supply and viable commercial opportunities. Progress depends on the quality of the projects that connect those goals."] },
+      { h: "Where projects stall", p: [
+        "A mineral asset can attract attention long before it is ready for investment. Sponsors may still need to establish their rights, complete technical work, identify a buyer, or show how the project will obtain power, water and transport. Without that information, prospective partners cannot assess the cost, risk or timetable with confidence.",
+        "The first task is therefore to qualify the opportunity. Who controls the asset? What work has been completed? Which approvals remain? What product can be sold, to whom, and under what conditions? Clear answers help turn a broad investment pitch into a project that a developer, lender or strategic buyer can evaluate.",
+      ] },
+      { h: "The opportunity extends beyond the mine", p: [
+        "Mineral development also creates demand for electricity, roads, rail, ports, processing capacity and digital traceability. These elements affect whether a project can operate competitively and whether its benefits extend into the wider economy.",
+        "For African sponsors, the strongest proposition links resource development with feasible local processing, jobs and supporting infrastructure. For U.S. partners, it identifies where equipment, technology, services, capital or offtake can contribute to a workable commercial plan. Corridor approaches, including Lobito, make these connections visible at a regional scale.",
+      ] },
+      { h: "Build a pipeline that investors can assess", p: [
+        "A credible project brief should state the sponsor and its authority, the development stage, the proposed product, infrastructure needs, expected capital requirement, likely customers and principal unresolved risks. It should also specify the type of partner being sought and the decision that partner is being asked to make.",
+        "That level of preparation makes discussions with U.S. developers, suppliers, investors and public finance institutions more productive. It also helps sponsors identify gaps that must be resolved before financing can proceed.",
+      ] },
+      { h: "ANCAPA's role", p: [
+        "ANCAPA Global Partners works across resources, energy, infrastructure, digital systems and capital. Our focus is to identify and qualify opportunities, organize the information partners need, and connect project sponsors with suitable U.S. commercial and financing counterparts. We aim to help both sides move from an initial conversation to a defined development path.",
+        "For governments and private sponsors with a priority minerals or enabling infrastructure project, the starting point is a clear account of the asset, the rights held, the work completed and the support needed. For U.S. companies, it is a precise description of the projects, geographies and roles they can pursue.",
+      ] },
+    ],
+    sourceNote: "Source and context: CSIS, The Future of U.S.-Africa Minerals Diplomacy, 18 September 2026.",
+  },
   { slug: "digital-infrastructure-frontier", category: "Digital", date: "August 2026", title: "Digital infrastructure as a growth-market multiplier", excerpt: "Connectivity, data systems and AI-enabled operations are increasingly foundational infrastructure rather than standalone technology projects." },
 ];
 
