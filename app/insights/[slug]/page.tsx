@@ -16,11 +16,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const i = insights.find((x) => x.slug === slug && x.body);
   if (!i) return {};
+  const title = i.seoTitle || i.title;
+  const description = i.dek || i.excerpt;
   return {
-    title: i.title,
-    description: i.dek || i.excerpt,
+    title,
+    description,
+    keywords: i.keywords,
     alternates: { canonical: `/insights/${i.slug}` },
-    openGraph: { type: "article", title: i.title, description: i.dek || i.excerpt, publishedTime: i.date },
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      url: `${siteUrl}/insights/${i.slug}`,
+      publishedTime: i.date,
+      section: i.category,
+      tags: i.keywords,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }
 
@@ -29,20 +42,37 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
   const i = insights.find((x) => x.slug === slug && x.body);
   if (!i) notFound();
 
+  const url = `${siteUrl}/insights/${i.slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: i.title,
     description: i.dek || i.excerpt,
     datePublished: i.date,
-    author: { "@type": "Organization", name: company.name },
-    publisher: { "@type": "Organization", name: company.name },
-    mainEntityOfPage: `${siteUrl}/insights/${i.slug}`,
+    dateModified: i.date,
+    inLanguage: "en-US",
+    articleSection: i.category,
+    keywords: i.keywords?.join(", "),
+    wordCount: i.body!.reduce((n, b) => n + b.p.join(" ").split(/\s+/).length, 0),
+    image: `${siteUrl}/opengraph-image`,
+    author: { "@type": "Organization", name: company.name, url: siteUrl },
+    publisher: { "@type": "Organization", name: company.name, logo: { "@type": "ImageObject", url: `${siteUrl}/ancapa-logo.png` } },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Insights", item: `${siteUrl}/insights` },
+      { "@type": "ListItem", position: 3, name: i.title, item: url },
+    ],
   };
 
   return <main className="bg-white">
     <ReadingProgress />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
     {/* Hero */}
     <section className="relative overflow-hidden bg-[#08233a] text-white">
