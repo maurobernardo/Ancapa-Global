@@ -78,13 +78,13 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     <section className="relative overflow-hidden bg-[#08233a] text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(185,151,88,.25),transparent_45%),radial-gradient(circle_at_85%_100%,rgba(185,151,88,.12),transparent_50%)]" />
       <span className="display pointer-events-none select-none absolute -top-10 right-[-2rem] md:right-8 text-[11rem] md:text-[16rem] leading-none text-white/[.05]">01</span>
-      <div className="container relative pt-10 pb-16 md:pt-16 md:pb-24">
+      <div className="container relative pt-6 pb-16 md:pt-8 md:pb-24">
         <div className="max-w-4xl">
           <Reveal>
             <Link href="/insights" className="chip border-white/20! bg-white/10! text-white/90"><ArrowLeft className="h-4 w-4" />All insights</Link>
           </Reveal>
           <Reveal delay={80}>
-            <p className="eyebrow mt-7 !text-gold">ANCAPA · Insights · {i.category}</p>
+            <p className="eyebrow eyebrow-gold mt-7">ANCAPA · Insights · {i.category}</p>
           </Reveal>
           <Reveal delay={140}>
             <h1 className="display mt-6 text-4xl md:text-6xl leading-[1.06] max-w-3xl">{i.title}</h1>
@@ -93,11 +93,11 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
             <p className="mt-6 text-lg md:text-xl leading-8 text-slate-300 max-w-2xl">{i.dek || i.excerpt}</p>
           </Reveal>
           <Reveal delay={260}>
-            <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400">
+            <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-300">
               <span className="font-semibold text-white">{company.name}</span>
-              <span className="h-1 w-1 rounded-full bg-white/30" />
+              <span className="h-1 w-1 rounded-full bg-white/40" />
               <span>{i.date}</span>
-              {i.readTime && <><span className="h-1 w-1 rounded-full bg-white/30" /><span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{i.readTime}</span></>}
+              {i.readTime && <><span className="h-1 w-1 rounded-full bg-white/40" /><span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{i.readTime}</span></>}
             </div>
           </Reveal>
         </div>
@@ -108,7 +108,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     </section>
 
     {/* Body */}
-    <article className="container py-14 md:py-20">
+    <article className="container pt-10 pb-14 md:pt-14 md:pb-20">
       <div className="max-w-5xl grid md:grid-cols-[1fr_2.4fr] gap-10 items-start">
         {i.takeaways && <Reveal className="md:sticky md:top-28 order-2 md:order-1">
           <div className="card p-6 bg-[#f7f5ef] border-none hover:-translate-y-1">
@@ -136,7 +136,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         <div className="max-w-5xl mt-16 rounded-3xl bg-navy text-white p-8 md:p-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_10%,rgba(185,151,88,.22),transparent_45%)]" />
           <div className="relative">
-            <p className="eyebrow !text-gold">Start a project conversation</p>
+            <p className="eyebrow eyebrow-gold">Start a project conversation</p>
             <h3 className="display text-2xl md:text-4xl mt-4 max-w-xl">Bring us a project, or a mandate to deploy.</h3>
             <p className="mt-4 text-slate-300 leading-7 max-w-xl">If you control a project seeking a U.S. development, technology or commercial partner, or your company is looking for qualified opportunities in African growth markets, let's discuss a specific fit.</p>
             <Link href="/contact" className="btn btn-light mt-7 w-fit">Partner with ANCAPA <ArrowRight className="ml-2 h-4 w-4" /></Link>
