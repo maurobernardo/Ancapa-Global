@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Clock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, CheckCircle2, ChevronDown } from "lucide-react";
 import { insights, company } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
@@ -71,6 +71,9 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
             </div>
           </Reveal>
         </div>
+      </div>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
+        <ChevronDown className="h-6 w-6" />
       </div>
     </section>
 
