@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, CheckCircle2, ChevronDown } from "lucide-react";
 import { insights, company } from "@/lib/data";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
+import { ShareBar } from "@/components/share-bar";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
 
@@ -74,8 +76,25 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
+    {/* Print-only cover, shown when saving/printing as PDF */}
+    <div className="hidden print:block px-2 pt-4 pb-8">
+      <div className="flex items-center justify-between border-b-2 border-navy pb-4">
+        <Image src="/ancapa-logo.png" alt="ANCAPA Global Partners" width={500} height={500} className="h-16 w-auto object-contain" />
+        <span className="text-[.7rem] tracking-[.2em] uppercase text-slate-500">Insights · {i.category}</span>
+      </div>
+      <h1 className="display mt-8 text-4xl leading-tight text-navy">{i.title}</h1>
+      <p className="mt-4 text-lg leading-7 text-slate-600">{i.dek || i.excerpt}</p>
+      <div className="mt-6 flex items-center gap-3 text-sm text-slate-500">
+        <span className="font-semibold text-navy">{company.name}</span>
+        <span>·</span>
+        <span>{i.date}</span>
+        {i.readTime && <><span>·</span><span>{i.readTime}</span></>}
+      </div>
+      <div className="mt-6 border-t border-slate-200" />
+    </div>
+
     {/* Hero */}
-    <section className="relative overflow-hidden bg-[#08233a] text-white">
+    <section className="relative overflow-hidden bg-[#08233a] text-white print:hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(185,151,88,.25),transparent_45%),radial-gradient(circle_at_85%_100%,rgba(185,151,88,.12),transparent_50%)]" />
       <span className="display pointer-events-none select-none absolute -top-10 right-[-2rem] md:right-8 text-[11rem] md:text-[16rem] leading-none text-white/[.05]">01</span>
       <div className="container relative pt-6 pb-16 md:pt-8 md:pb-24">
@@ -98,6 +117,11 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
               <span className="h-1 w-1 rounded-full bg-white/40" />
               <span>{i.date}</span>
               {i.readTime && <><span className="h-1 w-1 rounded-full bg-white/40" /><span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{i.readTime}</span></>}
+            </div>
+          </Reveal>
+          <Reveal delay={320}>
+            <div className="mt-6 [&_a]:border-white/20 [&_a]:bg-white/10 [&_a]:text-white/90 [&_button]:border-white/20 [&_button]:bg-white/10 [&_button]:text-white/90 [&_a:hover]:border-white [&_button:hover]:border-white [&_a:hover]:text-white [&_button:hover]:text-white">
+              <ShareBar url={url} title={i.title} text={i.dek || i.excerpt} />
             </div>
           </Reveal>
         </div>
@@ -132,7 +156,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         </div>
       </div>
 
-      <Reveal>
+      <Reveal className="print:hidden">
         <div className="max-w-5xl mt-16 rounded-3xl bg-navy text-white p-8 md:p-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_10%,rgba(185,151,88,.22),transparent_45%)]" />
           <div className="relative">
