@@ -43,6 +43,7 @@ export const insights = [
     dek: "Africa's mineral potential will draw lasting U.S. investment when sponsors can show credible projects, viable infrastructure and a clear route to market.",
     readTime: "5 min read",
     seoTitle: "U.S.-Africa Minerals Diplomacy: From Strategy to Investable Projects",
+    cover: "/artigo1.png",
     keywords: ["U.S.-Africa minerals diplomacy", "critical minerals investment Africa", "Africa mining investment", "minerals corridor investment", "Lobito corridor", "African mineral projects U.S. investors"],
     takeaways: [
       "Strategic interest only converts to financed projects when sponsors can answer basic questions of rights, readiness and route to market.",

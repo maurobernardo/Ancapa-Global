@@ -56,6 +56,7 @@ export default function Home(){
     <div className="grid md:grid-cols-3 gap-5 mt-10">{insights.map(i=>{
       const featured = !!i.body;
       const body=<>
+        {i.cover && <div className="relative -mx-7 -mt-7 mb-6 h-48 overflow-hidden rounded-t-[1.75rem]"><Image src={i.cover} alt={i.title} fill className="object-cover group-hover:scale-105 transition duration-500"/></div>}
         <div className="text-xs uppercase tracking-widest text-gold">{i.category}</div>
         <h3 className={featured?"text-2xl text-navy font-bold mt-4 leading-8":"text-xl text-navy font-semibold mt-4 leading-7"}>{i.title}</h3>
         <p className="text-sm leading-6 text-slate-600 mt-4">{i.excerpt}</p>
@@ -65,8 +66,8 @@ export default function Home(){
         </div>
       </>;
       return featured
-        ? <Link key={i.slug} href={`/insights/${i.slug}`} className="group relative card p-7 flex flex-col md:col-span-2 border-gold/40! shadow-[0_20px_45px_-25px_rgba(185,151,88,.6)] hover:-translate-y-1 hover:shadow-[0_28px_60px_-20px_rgba(185,151,88,.5)] transition">
-            <span className="absolute -top-3 left-6 chip bg-navy! text-white! border-navy! py-1! px-3! text-[.65rem]">Featured</span>
+        ? <Link key={i.slug} href={`/insights/${i.slug}`} className="group relative card p-7 flex flex-col overflow-hidden md:col-span-2 border-gold/40! shadow-[0_20px_45px_-25px_rgba(185,151,88,.6)] hover:-translate-y-1 hover:shadow-[0_28px_60px_-20px_rgba(185,151,88,.5)] transition">
+            <span className="absolute top-4 left-4 z-10 chip bg-navy! text-white! border-navy! py-1! px-3! text-[.65rem]">Featured</span>
             {body}
           </Link>
         : <article key={i.slug} className="card p-7 flex flex-col">{body}</article>;

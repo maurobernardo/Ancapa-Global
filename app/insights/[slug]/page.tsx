@@ -131,8 +131,19 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
       </div>
     </section>
 
+    {/* Cover image */}
+    {i.cover && <div className="container -mt-10 md:-mt-14 relative z-10 print:hidden">
+      <Reveal>
+        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-[0_30px_60px_-25px_rgba(8,35,58,.35)] border border-white/10">
+          <div className="relative aspect-[16/9] md:aspect-[21/9]">
+            <Image src={i.cover} alt={i.title} fill className="object-cover" priority />
+          </div>
+        </div>
+      </Reveal>
+    </div>}
+
     {/* Body */}
-    <article className="container pt-10 pb-14 md:pt-14 md:pb-20">
+    <article className="container pt-14 pb-14 md:pt-16 md:pb-20">
       <div className="max-w-5xl grid md:grid-cols-[1fr_2.4fr] gap-10 items-start">
         {i.takeaways && <Reveal className="md:sticky md:top-28 order-2 md:order-1">
           <div className="card p-6 bg-[#f7f5ef] border-none hover:-translate-y-1">
