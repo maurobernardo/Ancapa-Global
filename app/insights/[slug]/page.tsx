@@ -134,10 +134,11 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     {/* Cover image */}
     {i.cover && <div className="container -mt-10 md:-mt-14 relative z-10 print:hidden">
       <Reveal>
-        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-[0_30px_60px_-25px_rgba(8,35,58,.35)] border border-white/10">
-          <div className="relative aspect-[16/9] md:aspect-[21/9]">
+        <div className="max-w-5xl bg-white p-2 md:p-3 rounded-[1.75rem] shadow-[0_30px_60px_-25px_rgba(8,35,58,.35)] border border-slate-100">
+          <div className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-inset ring-black/5">
             <Image src={i.cover} alt={i.title} fill className="object-cover" priority />
           </div>
+          <p className="mt-2.5 px-1.5 pb-1 text-[.7rem] tracking-wide text-slate-400 italic">Panel discussion, CSIS forum on U.S.-Africa minerals diplomacy, September 2026.</p>
         </div>
       </Reveal>
     </div>}
