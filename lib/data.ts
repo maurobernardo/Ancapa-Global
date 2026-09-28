@@ -69,6 +69,7 @@ export const insights = [
       ] },
     ],
     sourceNote: "Source and context: CSIS, The Future of U.S.-Africa Minerals Diplomacy, 18 September 2026.",
+    sourceUrl: "https://www.csis.org/events/future-us-africa-minerals-diplomacy",
   },
   { slug: "digital-infrastructure-frontier", category: "Digital", date: "August 2026", title: "Digital infrastructure as a growth-market multiplier", excerpt: "Connectivity, data systems and AI-enabled operations are increasingly foundational infrastructure rather than standalone technology projects." },
 ];
