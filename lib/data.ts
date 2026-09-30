@@ -72,6 +72,66 @@ export const insights = [
     sourceNote: "Source and context: CSIS, The Future of U.S.-Africa Minerals Diplomacy, 18 September 2026.",
     sourceUrl: "https://www.csis.org/events/future-us-africa-minerals-diplomacy",
   },
+  {
+    slug: "mozambique-sadc-investment-prospects",
+    category: "Resources",
+    date: "September 2026",
+    title: "Mozambique and SADC's Next Investment Chapter",
+    excerpt: "Two strategic perspectives on infrastructure, regional integration, Gulf capital and the emerging investment case for Mozambique, Angola and Southern Africa.",
+    dek: "Two strategic perspectives on infrastructure, regional integration, Gulf capital and the emerging investment case for Mozambique, Angola and Southern Africa.",
+    readTime: "9 min read",
+    seoTitle: "Mozambique and SADC Investment Prospects: Infrastructure and Gulf Capital",
+    keywords: ["Mozambique investment", "SADC investment", "Angola investment", "Gulf capital Africa", "Lobito corridor", "Mozambique infrastructure", "GCC SADC trade"],
+    takeaways: [
+      "Mozambique is shifting toward project preparation and feasibility work, addressing the long-standing gap between strategic ambition and bankable projects.",
+      "A US$2.6 billion road program and US$1.5 billion in dam projects anchor a pipeline that the African Development Bank estimates needs roughly US$6.4 billion a year.",
+      "Gulf capital is moving from portfolio diversification to strategic resilience, with Mozambique and Angola positioned as dual-ocean gateways into Southern Africa.",
+    ],
+    body: [
+      { p: ["Mozambique is entering a potentially important new phase in its investment story, with greater emphasis on project preparation, infrastructure finance and private-sector participation. Recent government statements indicate a stronger focus on preparing strategic infrastructure projects in advance, completing feasibility work and presenting investors with opportunities that are closer to financing readiness. That shift matters because one of the biggest constraints to investment in Mozambique has not always been the absence of opportunities, but the gap between strategic ambition and bankable projects."] },
+      { h: "Infrastructure is becoming the investment backbone", p: [
+        "Government officials have emphasized that priority sectors such as agriculture and tourism cannot scale without stronger road networks and improved connectivity. More importantly, authorities are increasingly stressing the need to prepare strategic projects and their feasibility studies before going to market for financing, a notable shift toward investment discipline rather than simply project promotion.",
+        "The scale of the pipeline is already significant. Mozambique is preparing a national road intervention program valued at approximately US$2.6 billion, covering more than 3,000 kilometers and intended to raise the share of paved roads from around 28% to 38% by 2031. Around US$1 billion of the financing has reportedly already been secured, while the balance remains to be mobilized.",
+        "Water infrastructure is another major opportunity. The Moamba-Major and Mapai dam projects alone are estimated to require around US$1.5 billion, with financing still being sought. These directly relate to water security, drought resilience, flood management, agriculture and urban growth. The government is also moving to reserve equity for local investors through the Mozambique Stock Exchange, which could broaden the domestic capital base around strategic assets.",
+      ] },
+      { h: "The bigger opportunity is not infrastructure alone", quote: "Mozambique should increasingly be viewed not as a collection of isolated projects, but as a platform of interconnected investment opportunities.", p: [
+        "The strongest investment case for Mozambique comes from the interaction between sectors. Roads unlock agriculture and tourism. Energy enables mining, industry, logistics and digital infrastructure. Ports and corridors create access to regional and global markets. Water infrastructure protects productive systems and urban growth, and capital markets can help deepen local participation.",
+        "The African Development Bank has estimated that Mozambique needs roughly US$6.4 billion per year in infrastructure investment to meet its development ambitions, and has increasingly emphasized private-sector participation, de-risking and non-sovereign investment as part of the country's future financing model. The Bank has already invested heavily in transport, energy and corridor development, including support for the Nacala railway system, strategic roads, transmission infrastructure and renewable energy.",
+      ] },
+      { h: "Why this matters for U.S. investors", p: [
+        "For U.S. investors and companies, Mozambique sits at the intersection of several strategic themes: energy and power infrastructure, critical minerals and natural resources, transport and trade corridors, digital infrastructure, and agriculture and tourism. The opportunity is therefore not limited to traditional infrastructure investors. It extends to U.S. engineering firms, technology companies, project developers, equipment suppliers, financiers, private equity investors, commodity firms and specialized advisory companies.",
+      ] },
+      { h: "The real challenge is project preparation", quote: "Investors do not finance potential. They finance structured opportunities.", p: [
+        "Mozambique's investment potential is large, but the market will only attract sustained capital if projects are presented in a way that investors can evaluate efficiently. That means moving from “we need financing” to “here is the project, the sponsor, the commercial model, the feasibility work, the approvals, the infrastructure requirements, the return logic and the proposed financing pathway.”",
+        "That is why the government's current emphasis on feasibility studies and project preparation is significant. It begins to address one of the most persistent gaps in African infrastructure finance: the shortage of projects that are genuinely investment-ready.",
+      ] },
+      { h: "Where ANCAPA fits", p: [
+        "This emerging environment is directly aligned with the role ANCAPA Global Partners is building. ANCAPA operates at the intersection of capital, energy, resources, digital transformation and infrastructure, helping connect opportunities in high-growth markets with U.S. investors, companies, technology providers and strategic partners.",
+        "In Mozambique, this can mean helping identify and qualify priority investment opportunities, structure projects for U.S. participation, map financing pathways through public and private institutions, connect project sponsors with U.S. developers, EPCs, technology companies and financiers, strengthen market intelligence and due diligence, and support transactions from early-stage opportunity through partner engagement and execution.",
+      ] },
+      { h: "SADC's next capital opportunity", p: [
+        "Gulf capital is becoming more strategic, and Southern Africa sits at the intersection of energy security, critical minerals, logistics, food systems and long-term infrastructure demand. Recent analysis from the Gulf Research Center, Entrepreneur and Terex Ventures points in the same direction: Gulf investors are increasingly looking beyond conventional portfolio diversification toward assets that strengthen energy security, supply chains, food systems, logistics, critical minerals, digital infrastructure and long-term economic resilience.",
+        "GCC-SADC trade reached about US$38.6 billion in 2024, up from US$32 billion in 2022, while Gulf engagement has increasingly shifted toward infrastructure, energy, agriculture, mining and technology. Within that landscape, Mozambique and Angola stand out as two of the most strategically positioned markets.",
+      ] },
+      { h: "Mozambique: from resource potential to strategic platform", p: [
+        "Mozambique combines natural gas and energy resources, strategic Indian Ocean access, ports and regional transport corridors, mineral potential, large agricultural capacity, renewable energy opportunities and a growing need for infrastructure and digital investment. Gulf investors are already present: the Gulf Research Center points to more than US$3 billion in UAE investment in Mozambique, including DP World's involvement at the Port of Maputo and renewable-energy projects, alongside significant Qatari investment commitments in Mozambique's gas sector.",
+        "Mozambique can offer something larger than a single-sector investment case. It can serve as a platform connecting energy production, mining, agriculture, ports and regional trade. The Maputo, Beira and Nacala corridors are particularly relevant because they connect landlocked Southern African economies to the Indian Ocean.",
+      ] },
+      { h: "Angola: a stronger Gulf-SADC investment model is already emerging", quote: "Angola and the Lobito Corridor provide access to the Atlantic. Mozambique provides access to the Indian Ocean. Between them sits a resource-rich regional market.", p: [
+        "According to the Gulf Research Center, the UAE has developed an investment package in Angola worth approximately US$6.5 billion across infrastructure, agriculture, mining and technology. Saudi Arabia has pledged more than US$300 million toward infrastructure associated with the Lobito Corridor, while Oman has also invested directly in Angola's diamond sector.",
+        "The Lobito Corridor links Angola's Atlantic coast with mineral-producing regions further inland, including Zambia and the Democratic Republic of Congo, creating the possibility of building an investment ecosystem around mineral production, rail and port infrastructure, processing and refining, power generation, industrial zones and agricultural exports. Mozambique and Angola should not be viewed in isolation: their strategic value increases inside a broader SADC investment system that gives the region a potentially powerful proposition as a dual-ocean investment corridor.",
+      ] },
+      { h: "Capital will become more selective", quote: "SADC governments and project sponsors need to move from “we have resources and need investment” to “we have a defined project, credible sponsor, infrastructure plan, commercial model, permits, market access, risk analysis and a clear capital requirement.”", p: [
+        "The opportunity is real, but the threshold for investability is rising. Geopolitical relevance alone does not make a project investable. Investors will continue to examine commercial economics, governance, resilience, route concentration, energy exposure, supply-chain risk and transaction readiness.",
+        "The Gulf Research Center also identifies a key weakness in the current relationship: too much of SADC's trade with GCC economies remains concentrated in raw materials such as gold, diamonds and copper, which limits industrialization. The next investment chapter should focus on mineral processing and refining, agro-processing, industrial zones, local manufacturing, energy infrastructure, skills development and regional supply chains.",
+      ] },
+      { h: "Where ANCAPA sees the opportunity", p: [
+        "The Gulf does not have to be viewed as an alternative to U.S. or European capital. Increasingly, it can become a co-investment partner: many of the sectors targeted by Gulf investors, including energy, minerals, infrastructure, digital systems and logistics, are also strategic priorities for U.S. and international investors, creating opportunities for hybrid structures involving Gulf capital, U.S. technology or financing, and African projects and local partners.",
+        "ANCAPA's role is to help connect high-potential opportunities in Africa and other growth markets with the capital, companies and strategic partners capable of moving them toward execution. This requires credible project origination, investment-grade data, commercial structuring, partner identification, market intelligence, capital matching and local execution. The countries that succeed will be those that can turn natural advantages into structured, bankable investment opportunities, and the companies that succeed will be those capable of connecting capital to projects, projects to markets, and global investors to credible local partners.",
+      ] },
+    ],
+    sourceNote: "Sources: 360 Mozambique, African Development Bank, Gulf Research Center, Entrepreneur and Terex Ventures, September 2026.",
+  },
   { slug: "digital-infrastructure-frontier", category: "Digital", date: "August 2026", title: "Digital infrastructure as a growth-market multiplier", excerpt: "Connectivity, data systems and AI-enabled operations are increasingly foundational infrastructure rather than standalone technology projects." },
 ];
 
