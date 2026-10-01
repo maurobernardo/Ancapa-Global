@@ -43,6 +43,7 @@ export const insights = [
     readTime: "5 min read",
     seoTitle: "U.S.-Africa Minerals Diplomacy: From Strategy to Investable Projects",
     cover: "/artigo1.png",
+    coverCaption: "Panel discussion, CSIS forum on U.S.-Africa minerals diplomacy, September 2026.",
     keywords: ["U.S.-Africa minerals diplomacy", "critical minerals investment Africa", "Africa mining investment", "minerals corridor investment", "Lobito corridor", "African mineral projects U.S. investors"],
     takeaways: [
       "Strategic interest only converts to financed projects when sponsors can answer basic questions of rights, readiness and route to market.",
@@ -74,6 +75,7 @@ export const insights = [
   {
     slug: "mozambique-next-investment-chapter",
     cover: "/mozambique.jpeg",
+    coverCaption: "ExxonMobil.",
     category: "Resources",
     date: "September 2026",
     title: "Mozambique's Next Investment Chapter: From Strategic Projects to Bankable Opportunities",
@@ -119,6 +121,7 @@ export const insights = [
   {
     slug: "sadc-gulf-capital-opportunity",
     cover: "/sadc.jpeg",
+    coverCaption: "Maputo-Katembe Bridge, Mozambique.",
     category: "Resources",
     date: "September 2026",
     title: "SADC's Next Capital Opportunity: Why Mozambique and Angola Are Well Positioned for the Gulf's Global Investment Shift",

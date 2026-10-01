@@ -138,7 +138,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
           <div className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-inset ring-black/5">
             <Image src={i.cover} alt={i.title} fill className="object-cover" priority />
           </div>
-          <p className="mt-2.5 px-1.5 pb-1 text-[.7rem] tracking-wide text-slate-400 italic">Panel discussion, CSIS forum on U.S.-Africa minerals diplomacy, September 2026.</p>
+          {i.coverCaption && <p className="mt-2.5 px-1.5 pb-1 text-[.7rem] tracking-wide text-slate-400 italic">{i.coverCaption}</p>}
         </div>
       </Reveal>
     </div>}
