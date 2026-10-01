@@ -33,7 +33,6 @@ export const opportunities = [
 ];
 
 export const insights = [
-  { slug: "us-capital-growth-markets", category: "Investment Thesis", date: "September 2026", title: "Why U.S. capital needs stronger origination in growth markets", excerpt: "Capital is available, but investable pipelines remain fragmented. ANCAPA focuses on the bridge between opportunity, local execution and investor readiness." },
   {
     slug: "critical-minerals-corridors",
     category: "Resources",
@@ -74,6 +73,7 @@ export const insights = [
   },
   {
     slug: "mozambique-next-investment-chapter",
+    cover: "/mozambique.jpeg",
     category: "Resources",
     date: "September 2026",
     title: "Mozambique's Next Investment Chapter: From Strategic Projects to Bankable Opportunities",
@@ -118,6 +118,7 @@ export const insights = [
   },
   {
     slug: "sadc-gulf-capital-opportunity",
+    cover: "/sadc.jpeg",
     category: "Resources",
     date: "September 2026",
     title: "SADC's Next Capital Opportunity: Why Mozambique and Angola Are Well Positioned for the Gulf's Global Investment Shift",
@@ -163,7 +164,6 @@ export const insights = [
       { label: "Terex Ventures: 2026 Middle East War, GCC Investment Priorities", url: "https://terexventures.com/2026-middle-east-war-gcc-investment-priorities-india-africa-europe-us/" },
     ],
   },
-  { slug: "digital-infrastructure-frontier", category: "Digital", date: "August 2026", title: "Digital infrastructure as a growth-market multiplier", excerpt: "Connectivity, data systems and AI-enabled operations are increasingly foundational infrastructure rather than standalone technology projects." },
 ];
 
 export const operatingModel = [
