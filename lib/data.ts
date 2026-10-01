@@ -112,6 +112,9 @@ export const insights = [
       ] },
     ],
     sourceNote: "Sources: 360 Mozambique and the African Development Bank, September 2026.",
+    sources: [
+      { label: "360 Mozambique: Mozambique Seeks Financing for Strategic Infrastructure Projects", url: "https://360mozambique.com/business/infrastructure/mozambique-seeks-financing-for-strategic-infrastructure-projects-2/" },
+    ],
   },
   {
     slug: "sadc-gulf-capital-opportunity",
@@ -154,6 +157,11 @@ export const insights = [
       ] },
     ],
     sourceNote: "Sources: Gulf Research Center, Entrepreneur and Terex Ventures, September 2026.",
+    sources: [
+      { label: "Gulf Research Center: GCC-SADC Relations and Investment Trends", url: "https://www.grc.net/single-commentary/377" },
+      { label: "Entrepreneur: What the Gulf's Growing Investment in Africa Signals", url: "https://www.entrepreneur.com/building-a-business/what-the-gulfs-growing-investment-in-africa-signals-about-the-next-decade-of-global-capital" },
+      { label: "Terex Ventures: 2026 Middle East War, GCC Investment Priorities", url: "https://terexventures.com/2026-middle-east-war-gcc-investment-priorities-india-africa-europe-us/" },
+    ],
   },
   { slug: "digital-infrastructure-frontier", category: "Digital", date: "August 2026", title: "Digital infrastructure as a growth-market multiplier", excerpt: "Connectivity, data systems and AI-enabled operations are increasingly foundational infrastructure rather than standalone technology projects." },
 ];

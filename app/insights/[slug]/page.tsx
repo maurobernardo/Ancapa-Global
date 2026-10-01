@@ -180,10 +180,15 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         </div>
       </Reveal>
 
-      {i.sourceNote && <div className="max-w-5xl mt-8 rounded-2xl border border-slate-200 bg-[#f7f5ef] px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
-        <span className="eyebrow shrink-0 text-navy!">Source</span>
-        <p className="text-sm text-slate-700 leading-6 flex-1">{i.sourceNote}</p>
-        {i.sourceUrl && <a href={i.sourceUrl} target="_blank" rel="noopener noreferrer" className="btn btn-dark py-2! px-4! text-xs! shrink-0 w-fit">View source <ArrowRight className="ml-2 h-3.5 w-3.5" /></a>}
+      {i.sourceNote && <div className="max-w-5xl mt-8 rounded-2xl border border-slate-200 bg-[#f7f5ef] px-5 py-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <span className="eyebrow shrink-0 text-navy!">Source</span>
+          <p className="text-sm text-slate-700 leading-6 flex-1">{i.sourceNote}</p>
+          {!i.sources && i.sourceUrl && <a href={i.sourceUrl} target="_blank" rel="noopener noreferrer" className="btn btn-dark py-2! px-4! text-xs! shrink-0 w-fit">View source <ArrowRight className="ml-2 h-3.5 w-3.5" /></a>}
+        </div>
+        {i.sources && <div className="mt-4 flex flex-wrap gap-2">
+          {i.sources.map((s) => <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="btn btn-dark py-2! px-4! text-xs!">{s.label} <ArrowRight className="ml-2 h-3.5 w-3.5" /></a>)}
+        </div>}
       </div>}
     </article>
   </main>;
