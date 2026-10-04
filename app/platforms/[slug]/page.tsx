@@ -13,21 +13,15 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
 }
 
 function SupplyPage({p}:{p:(typeof platforms)[number]}){
- const Icon=p.icon;
  return <>
-  <section className="mesh border-b overflow-hidden">
-   <div className="container pt-8 pb-14 md:pt-10 md:pb-16 grid lg:grid-cols-[1.08fr_.92fr] gap-10 lg:gap-14 items-center">
-    <div>
-     <div className="h-14 w-14 rounded-2xl flex items-center justify-center" style={{color:p.accent,background:`${p.accent}18`}}><Icon className="h-7 w-7"/></div>
-     <p className="eyebrow mt-6">{p.name}</p>
-     <h1 className="display text-5xl md:text-7xl text-navy mt-4 max-w-4xl">{p.headline}</h1>
-     <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">{p.description}</p>
-     <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">We help governments, project sponsors, private companies, contractors and development partners move from technical requirement to qualified supplier, commercial evaluation and coordinated delivery.</p>
-     <div className="mt-8 flex flex-wrap gap-3"><Link href="/contact" className="btn btn-dark">Submit a procurement requirement <ArrowRight className="ml-2 h-4 w-4"/></Link><Link href="#approach" className="btn btn-light">How we source</Link></div>
-    </div>
-    <div className="bg-white rounded-[2rem] border border-slate-200 shadow-[0_30px_90px_rgba(8,35,58,.12)] p-8 md:p-10 flex items-center justify-center lg:min-h-[390px]">
-     <Image src="/ancapa-supply-logo.png" alt="ANCAPA Supply" width={650} height={520} className="w-full max-w-[430px] h-auto object-contain" priority />
-    </div>
+  <section className="mesh border-b">
+   <div className="container pt-8 pb-14 md:pt-10 md:pb-16">
+    <div className="h-14 flex items-center"><Image src={p.logo} alt={p.name} width={260} height={100} className="h-16 w-auto object-contain object-left" priority /></div>
+    <p className="eyebrow mt-5">{p.name}</p>
+    <h1 className="display text-5xl md:text-7xl text-navy mt-4 max-w-4xl">{p.headline}</h1>
+    <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">{p.description}</p>
+    <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">We help governments, project sponsors, private companies, contractors and development partners move from technical requirement to qualified supplier, commercial evaluation and coordinated delivery.</p>
+    <div className="mt-8 flex flex-wrap gap-3"><Link href="/contact" className="btn btn-dark">Submit a procurement requirement <ArrowRight className="ml-2 h-4 w-4"/></Link><Link href="#approach" className="btn btn-light">How we source</Link></div>
    </div>
   </section>
 
