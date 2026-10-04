@@ -1,4 +1,4 @@
-import { Bolt, Gem, Cpu, Landmark, Building2 } from "lucide-react";
+import { Bolt, Gem, Cpu, Landmark, Building2, PackageCheck } from "lucide-react";
 
 export const company = {
   name: "ANCAPA Global Partners",
@@ -17,6 +17,36 @@ export const platforms = [
   { slug: "digital", name: "ANCAPA Digital", short: "Digital", icon: Cpu, logo: "/ANCAPA_Digital_logo-removebg-preview.png", accent: "#2D7FF9", headline: "Digital infrastructure for modern economies.", description: "AI, data infrastructure, enterprise digitization, fintech enablement and digital public infrastructure.", focus: ["AI & automation", "Data infrastructure", "Fintech", "Enterprise digitization", "Digital public infrastructure", "Cyber-resilient systems"] },
   { slug: "capital", name: "ANCAPA Capital", short: "Capital", icon: Landmark, logo: "/ANCAPA_Capital_logo-removebg-preview.png", accent: "#C6A15B", headline: "Capital aligned with opportunity.", description: "Investor origination, project finance, strategic advisory, transaction support and market-entry execution.", focus: ["Capital raising", "Project finance", "Investor origination", "Transaction support", "Market entry", "Strategic partnerships"] },
   { slug: "infrastructure", name: "ANCAPA Infrastructure", short: "Infrastructure", icon: Building2, logo: "/ANCAPA_Infrastructure_logo-removebg-preview.png", accent: "#477E8F", headline: "Infrastructure that unlocks growth.", description: "Transport, ports, logistics, industrial facilities, water systems and enabling infrastructure for high-growth markets.", focus: ["Transport", "Ports & logistics", "Industrial infrastructure", "Water systems", "Urban systems", "Digital infrastructure"] },
+  { slug: "supply", name: "ANCAPA Supply", short: "Supply", icon: PackageCheck, logo: "/ancapa-supply-logo.png", accent: "#C4561F", headline: "Sourcing the equipment projects run on.", description: "Qualified supplier sourcing, technical evaluation and procurement coordination for energy, resources, digital, capital and infrastructure projects, including access to U.S. manufacturers and technology providers.", focus: ["Equipment sourcing", "Supplier qualification", "Technical specification review", "Commercial comparison", "Logistics and shipping", "After-sales coordination"] },
+];
+
+export const supplySectors = [
+  { title: "Energy", text: "Generation equipment, grid components, storage systems and distributed power solutions." },
+  { title: "Resources", text: "Mining, processing and industrial equipment for resource development and supply chains." },
+  { title: "Digital", text: "Data center, network, cybersecurity and enterprise technology hardware and systems." },
+  { title: "Capital", text: "Procurement packages structured to support project finance and lender requirements." },
+  { title: "Infrastructure", text: "Transport, port, water and industrial equipment for enabling infrastructure projects." },
+];
+
+export const supplyCapabilities = [
+  { title: "Requirement definition", text: "Translate project needs into clear technical specifications and procurement scope." },
+  { title: "Supplier identification", text: "Map and qualify manufacturers, distributors and solution providers against the requirement." },
+  { title: "Technical evaluation", text: "Assess technical fit, standards, performance and compatibility with local conditions." },
+  { title: "Commercial comparison", text: "Compare pricing, terms, lead times and total cost across qualified suppliers." },
+  { title: "Logistics and shipping", text: "Coordinate freight, customs, port handling and inland delivery to site." },
+  { title: "Delivery and support", text: "Track delivery, installation coordination and after-sales support commitments." },
+];
+
+export const supplyClients = [
+  "Governments and public agencies",
+  "Project sponsors",
+  "Developers and EPC contractors",
+  "Mining and resource companies",
+  "Utilities and power producers",
+  "Telecom and digital operators",
+  "Development finance institutions",
+  "Commercial lenders",
+  "U.S. manufacturers and suppliers",
 ];
 
 export const regions = [

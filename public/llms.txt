@@ -2,7 +2,7 @@
 
 > A U.S.-anchored investment and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia. Founded in 2019.
 
-ANCAPA Global Partners (legal name: Antonio INGUANE LLC d/b/a ANCAPA Global Partners) originates, structures and advances opportunities where strategic capital, technology, natural resources and enabling infrastructure intersect. The platform is organized around five capabilities — Energy, Resources, Digital, Capital and Infrastructure — and operates across three growth corridors: Africa, the Caribbean and Southeast Asia.
+ANCAPA Global Partners (legal name: Antonio INGUANE LLC d/b/a ANCAPA Global Partners) originates, structures and advances opportunities where strategic capital, technology, natural resources and enabling infrastructure intersect. The platform is organized around six capabilities: Energy, Resources, Digital, Capital, Infrastructure and Supply, and operates across three growth corridors: Africa, the Caribbean and Southeast Asia.
 
 ## Company
 
@@ -16,6 +16,7 @@ ANCAPA Global Partners (legal name: Antonio INGUANE LLC d/b/a ANCAPA Global Part
 - [ANCAPA Digital](https://ancapaglobal.com/platforms/digital): AI and automation, data infrastructure, fintech, enterprise digitization and digital public infrastructure.
 - [ANCAPA Capital](https://ancapaglobal.com/platforms/capital): Capital raising, project finance, investor origination, transaction support and market entry.
 - [ANCAPA Infrastructure](https://ancapaglobal.com/platforms/infrastructure): Transport, ports and logistics, industrial infrastructure, water and urban systems.
+- [ANCAPA Supply](https://ancapaglobal.com/platforms/supply): Qualified supplier sourcing, technical evaluation, logistics and procurement coordination, including access to U.S. manufacturers and technology providers.
 
 ## Markets
 
@@ -23,7 +24,7 @@ ANCAPA Global Partners (legal name: Antonio INGUANE LLC d/b/a ANCAPA Global Part
 
 ## Opportunities
 
-- [Opportunity pipeline](https://ancapaglobal.com/opportunities): Curated, high-level investment and development opportunities across ANCAPA's five platforms and three growth corridors.
+- [Opportunity pipeline](https://ancapaglobal.com/opportunities): Curated, high-level investment and development opportunities across ANCAPA's six platforms and three growth corridors.
 
 ## Insights
 

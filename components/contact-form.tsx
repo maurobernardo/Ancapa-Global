@@ -38,7 +38,7 @@ export default function ContactForm({ compact = false }: { compact?: boolean }) 
       <input name="organization" placeholder="Organization" className="field" />
       <select name="interest" className="field" defaultValue="">
         <option value="" disabled>Area of interest</option>
-        <option>Investment opportunity</option><option>Capital partnership</option><option>Energy</option><option>Resources</option><option>Digital</option><option>Infrastructure</option><option>Market entry</option><option>Other</option>
+        <option>Investment opportunity</option><option>Capital partnership</option><option>Energy</option><option>Resources</option><option>Digital</option><option>Infrastructure</option><option>Supply and procurement</option><option>Market entry</option><option>Other</option>
       </select>
     </div>
     <textarea required name="message" placeholder="Tell us what you are exploring..." rows={compact ? 4 : 6} className="field resize-y" />
