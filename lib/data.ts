@@ -65,7 +65,7 @@ export const opportunities = [
 export const insights = [
   {
     slug: "lobito-corridor-investment-frontier",
-    cover: "/lobito.jpeg",
+    cover: "/lobito.jpg",
     coverCaption: "Benguela Railway Station. Photo: David Stanley via Wikimedia Commons.",
     category: "Resources",
     date: "October 2026",
