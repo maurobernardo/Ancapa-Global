@@ -64,6 +64,86 @@ export const opportunities = [
 
 export const insights = [
   {
+    slug: "lobito-corridor-investment-frontier",
+    cover: "/lobito.jpeg",
+    coverCaption: "Benguela Railway Station. Photo: David Stanley via Wikimedia Commons.",
+    category: "Resources",
+    date: "October 2026",
+    title: "The Lobito Corridor's Next Investment Frontier: From Critical Minerals to Bankable Industrial Growth",
+    excerpt: "Why the latest developments in Angola, Zambia, and the DRC could open a new phase of U.S.-Africa investment, infrastructure development, and regional industrialization.",
+    dek: "Why the latest developments in Angola, Zambia, and the DRC could open a new phase of U.S.-Africa investment, infrastructure development, and regional industrialization.",
+    readTime: "7 min read",
+    seoTitle: "Lobito Corridor Investment: From Critical Minerals to Bankable Industrial Growth",
+    keywords: ["Lobito Corridor", "Lobito Corridor investment", "Zambia critical minerals", "Angola Zambia DRC", "U.S.-Africa investment", "copper cobalt supply chain", "DFC EXIM USTDA"],
+    takeaways: [
+      "Zambia's finance minister says road connectivity financing for the corridor is secured, with procurement and construction next. The breakdown and timetable are still to be clarified.",
+      "The wider opportunity extends beyond railways to mineral processing, energy, logistics equipment and digital trade systems.",
+      "Investors finance defined projects with identifiable sponsors and clear capital needs, not general sector interest.",
+    ],
+    body: [
+      { p: ["The Lobito Corridor is entering a consequential phase. Recent developments involving Angola, Zambia, and the Democratic Republic of Congo (DRC) suggest that attention is shifting from regional agreements and infrastructure commitments toward financing, procurement, commercial partnerships, and implementation."] },
+      { h: "A corridor moving from commitments to execution", p: [
+        "At the Second High-Level Lobito Corridor Coordination Meeting in Lusaka, held on October 5 and 6, the three governments and their development partners emphasized the need to accelerate infrastructure delivery, simplify cross-border procedures, and expand private-sector participation.",
+        "Zambia's Finance Minister, Situmbeko Musokotwane, announced that financing for road connectivity associated with the corridor had been secured, with procurement and construction identified as the next priorities. The announcement represents progress, although the precise financing breakdown and implementation timetable remain to be clarified.",
+        "Meanwhile, Zambian President Hakainde Hichilema called for faster implementation, including more efficient border operations, digital trade systems, and greater private-sector involvement.",
+        "These developments reinforce an important investment proposition: the Lobito Corridor is no longer simply a transport infrastructure initiative. It is increasingly becoming a platform for connecting mineral resources, industrial development, international capital, and global supply chains.",
+      ] },
+      { h: "Critical minerals are driving a wider investment opportunity", quote: "Mineral availability creates strategic interest. Bankable projects, reliable infrastructure, and credible commercial arrangements convert that interest into investment.", p: [
+        "The corridor's strategic importance is closely tied to the copper and cobalt resources of Zambia and the DRC, both essential to electricity networks, industrial manufacturing, battery technologies, and other advanced supply chains. Connecting these production regions to Angola's Atlantic coast could improve access to international markets, diversify logistics routes, and strengthen the commercial competitiveness of regional mining operations.",
+        "A parallel development adds another dimension. On October 8, Zambia confirmed that negotiations were continuing on a critical minerals agreement with the United States. The proposed arrangement remains under discussion, but it reflects growing attention to the commercial and strategic relationship between African mineral producers and international markets.",
+        "For U.S. investors and companies, the opportunity extends beyond securing access to mineral resources. It includes participation in the infrastructure, technology, processing capacity, logistics systems, and industrial services required to develop competitive supply chains.",
+      ] },
+      { h: "The next investment cycle will extend beyond railways", p: [
+        "The immediate infrastructure priorities are significant. Yet the broader commercial opportunity may lie in the investments that follow improved connectivity. Four interconnected areas deserve particular attention.",
+      ] },
+      { h: "Mining development and local mineral processing", p: [
+        "Improved logistics can support mine expansion, new project development, and the modernization of existing operations. However, the longer-term opportunity is to move beyond the export of unprocessed commodities. Mineral processing, refining, industrial facilities, and associated technical services could generate additional value within the region.",
+        "These investments will depend on competitive energy supplies, water availability, environmental and social safeguards, reliable transport, and access to long-term buyers.",
+      ] },
+      { h: "Energy and industrial infrastructure", p: [
+        "Mining and mineral processing require substantial and reliable energy. The corridor could create opportunities for power generation, transmission, industrial energy systems, substations, storage, and supporting utilities.",
+        "Integrating energy infrastructure into mining and logistics investment planning would strengthen project economics while creating opportunities for specialized engineering and technology providers.",
+      ] },
+      { h: "Logistics, equipment, and supply chains", p: [
+        "The development of the corridor could stimulate demand for freight terminals, warehouses, dry ports, maintenance facilities, material-handling equipment, railway services, and logistics technologies.",
+        "For U.S. manufacturers and service providers, this creates potential entry points beyond large infrastructure contracts. Specialized equipment suppliers, engineering firms, industrial technology companies, and logistics operators may find opportunities through partnerships with regional developers, concessionaires, contractors, and mining companies.",
+      ] },
+      { h: "Digital trade and investment intelligence", p: [
+        "Efficient transport infrastructure alone will not guarantee efficient trade. Digital customs systems, cargo tracking, geospatial infrastructure intelligence, asset monitoring, and interoperable trade platforms could help reduce delays and improve operational transparency.",
+        "Investment-grade data will also become increasingly important for identifying viable project locations, assessing infrastructure gaps, evaluating environmental and social risks, and preparing projects for financing.",
+      ] },
+      { h: "From infrastructure commitments to a pipeline of bankable projects", p: [
+        "The central challenge is no longer simply attracting international interest. It is developing a credible pipeline of projects that investors, financial institutions, technology providers, and commercial partners can evaluate and execute. This requires moving beyond broad sector opportunities toward clearly defined transactions with identifiable sponsors, realistic capital requirements, commercial demand, and transparent implementation pathways.",
+        "For the Lobito Corridor, that means strengthening five elements. Project identification: mapping commercially viable opportunities across mining, energy, logistics, industrial processing, and supporting infrastructure. Investment readiness: establishing feasibility, ownership, permits, financial models, environmental and social requirements, and project risks.",
+        "Commercial alignment: connecting projects with buyers, offtakers, equipment suppliers, operators, and strategic partners. Financing pathways: matching project requirements with appropriate development finance, export credit, commercial lending, and private capital. Local participation: ensuring that regional businesses can compete for contracts, develop technical capabilities, and participate in industrial value chains.",
+        "The corridor's long-term economic value will be determined not only by the volume of minerals transported, but also by the investment, employment, and productive capacity created along its route.",
+      ] },
+      { h: "The U.S.-Africa commercial opportunity", p: [
+        "The involvement of U.S. development and financing institutions provides a potential foundation for broader private-sector engagement. Institutions such as the U.S. International Development Finance Corporation (DFC), the Export-Import Bank of the United States (EXIM), and the U.S. Trade and Development Agency (USTDA) offer different instruments that may support eligible investments, exports, and project preparation. Their relevance will depend on the structure, maturity, commercial viability, and eligibility of individual projects.",
+        "For U.S. companies, a practical entry strategy could involve working with credible African project sponsors to identify specific requirements in engineering, industrial equipment, power infrastructure, mining technology, logistics, and digital systems. For African companies and governments, the priority is to present well-defined opportunities rather than generalized requests for financing. This is where stronger alignment between project origination, commercial partnerships, and financing becomes essential.",
+      ] },
+      { h: "ANCAPA perspective: connecting investment opportunities with execution", p: [
+        "At ANCAPA Global Partners, we see the Lobito Corridor as an important example of how strategic infrastructure can generate a broader pipeline of cross-border investment opportunities. Our focus is on helping bridge the gap between opportunities in growth markets and the U.S. capital, technology, equipment, and commercial partnerships required to advance them.",
+        "Across our Energy, Resources, Digital, Capital, Infrastructure, and Supply platforms, we see potential to support this emerging investment ecosystem by identifying and qualifying investment opportunities with credible local sponsors, connecting project developers with relevant U.S. technical and commercial partners, and supporting investment readiness, market intelligence, and transaction preparation.",
+        "We also see a role in facilitating access to U.S. industrial equipment, technology, and specialist suppliers, and in supporting partnerships that strengthen local implementation capacity and long-term commercial participation. The objective is not simply to connect investors with mineral resources. It is to help structure commercially viable opportunities around those resources and the infrastructure needed to develop them.",
+      ] },
+      { h: "Looking ahead: the corridor's real measure of success", quote: "The real investment story is not simply about moving Africa's minerals to global markets. It is about building the infrastructure, industries, and partnerships that enable Africa to capture greater value from its resources.", p: [
+        "The latest developments in Lusaka provide encouraging signals of institutional coordination and investment momentum. However, the next phase will be measured by procurement execution, financing completion, infrastructure delivery, cross-border efficiency, and the emergence of commercially sustainable projects.",
+        "For Angola, Zambia, and the DRC, the opportunity is to transform the Lobito Corridor into a competitive regional industrial and trade platform. For international investors and U.S. companies, the opportunity is to participate in a developing ecosystem of mining, infrastructure, energy, logistics, technology, and industrial services.",
+        "That is where the next generation of bankable opportunities will emerge.",
+      ] },
+    ],
+    sourceNote: "Sources: Lusaka Times, The Rio Times, News Diggers, Voice of Nigeria and Radio Okapi, October 2026.",
+    sources: [
+      { label: "Lusaka Times: Lobito Corridor Meeting Closes", url: "https://www.lusakatimes.com/2026/10/07/lobito-corridor-meeting-closes/" },
+      { label: "The Rio Times: Zambia Says Lobito Corridor Road Financing Is Secured", url: "https://www.riotimesonline.com/zambia-lobito-corridor-road-financing-2026/" },
+      { label: "News Diggers: We've Sealed Financing for Lobito Corridor", url: "https://diggers.news/business/2026/10/06/weve-sealed-financing-for-lobito-corridor-musokotwane/" },
+      { label: "Voice of Nigeria: Zambian President Urges Faster Action", url: "https://von.gov.ng/zambian-president-urges-faster-action-on-lobito-corridor/" },
+      { label: "Voice of Nigeria: Zambia Negotiates Critical Minerals Deal with U.S.", url: "https://von.gov.ng/zambia-negotiates-critical-minerals-deal-with-us/" },
+      { label: "Radio Okapi: Kinshasa, Luanda et Lusaka veulent accélérer le corridor de Lobito", url: "https://www.radiookapi.net/2026/10/06/actualite/economie/kinshasa-luanda-et-lusaka-veulent-accelerer-la-mise-en-oeuvre-du" },
+    ],
+  },
+  {
     slug: "critical-minerals-corridors",
     category: "Resources",
     date: "September 2026",

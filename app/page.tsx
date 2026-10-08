@@ -53,7 +53,7 @@ export default function Home(){
       </div>
       <Link href="/insights" className="chip hidden md:inline-flex text-navy">All insights <ArrowRight className="h-4 w-4"/></Link>
     </div>
-    <div className="grid md:grid-cols-3 gap-5 mt-10">{insights.map(i=>{
+    <div className="grid md:grid-cols-2 gap-5 mt-10">{insights.map((i,idx)=>{
       const featured = !!i.body;
       const body=<>
         {i.cover && <div className="relative -mx-7 -mt-7 mb-6 h-48 overflow-hidden rounded-t-[1.75rem]"><Image src={i.cover} alt={i.title} fill className="object-cover group-hover:scale-105 transition duration-500"/></div>}
@@ -66,8 +66,8 @@ export default function Home(){
         </div>
       </>;
       return featured
-        ? <Link key={i.slug} href={`/insights/${i.slug}`} className="group relative card p-7 flex flex-col overflow-hidden md:col-span-2 border-gold/40! shadow-[0_20px_45px_-25px_rgba(185,151,88,.6)] hover:-translate-y-1 hover:shadow-[0_28px_60px_-20px_rgba(185,151,88,.5)] transition">
-            <span className="absolute top-4 left-4 z-10 chip bg-navy! text-white! border-navy! py-1! px-3! text-[.65rem]">Featured</span>
+        ? <Link key={i.slug} href={`/insights/${i.slug}`} className="group relative card p-7 flex flex-col overflow-hidden border-gold/40! shadow-[0_20px_45px_-25px_rgba(185,151,88,.6)] hover:-translate-y-1 hover:shadow-[0_28px_60px_-20px_rgba(185,151,88,.5)] transition">
+            {idx===0 && <span className="absolute top-4 left-4 z-10 chip bg-navy! text-white! border-navy! py-1! px-3! text-[.65rem]">Latest</span>}
             {body}
           </Link>
         : <article key={i.slug} className="card p-7 flex flex-col">{body}</article>;
