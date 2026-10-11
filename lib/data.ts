@@ -66,6 +66,7 @@ export const insights = [
   {
     slug: "mozambique-angola-critical-minerals",
     cover: "/nova.jpeg",
+    coverCaption: "Mineral project site in Southern Africa",
     category: "Resources",
     date: "October 2026",
     title: "Critical Minerals: Can Mozambique and Angola Turn Global Supply Pressures into an Investment Advantage?",
