@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, CheckCircle2, ChevronDown } from "lucide-react";
 import { insights, company } from "@/lib/data";
+import { coverRatio } from "@/lib/cover";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareBar } from "@/components/share-bar";
@@ -71,6 +72,9 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     ],
   };
 
+  // Show the whole image; only crop when it is taller than 16:10 so portraits don't dominate
+  const ratio = Math.max(await coverRatio(i.cover), 1.6);
+
   return <main className="bg-white">
     <ReadingProgress />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -134,12 +138,12 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     {/* Cover image */}
     {i.cover && <div className="container -mt-10 md:-mt-14 relative z-10 print:hidden">
       <Reveal>
-        <div className="max-w-5xl bg-white p-2 md:p-3 rounded-[1.75rem] shadow-[0_30px_60px_-25px_rgba(8,35,58,.35)] border border-slate-100">
-          <div className="relative aspect-video rounded-2xl overflow-hidden ring-1 ring-inset ring-black/5">
-            <Image src={i.cover} alt={i.title} fill className="object-cover" priority />
+        <figure className="max-w-5xl bg-white p-1.5 sm:p-2 md:p-3 rounded-2xl md:rounded-[1.75rem] shadow-[0_30px_60px_-25px_rgba(8,35,58,.35)] border border-slate-100">
+          <div className="relative rounded-xl md:rounded-2xl overflow-hidden ring-1 ring-inset ring-black/5" style={{ aspectRatio: ratio }}>
+            <Image src={i.cover} alt={i.coverCaption || i.title} fill sizes="(min-width: 1024px) 1024px, 100vw" className="object-cover" priority />
           </div>
-          {i.coverCaption && <p className="mt-2.5 px-1.5 pb-1 text-[.7rem] tracking-wide text-slate-400 italic">{i.coverCaption}</p>}
-        </div>
+          {i.coverCaption && <figcaption className="mt-2.5 px-1.5 pb-1 text-xs md:text-[.8rem] leading-5 text-slate-500 italic">{i.coverCaption}</figcaption>}
+        </figure>
       </Reveal>
     </div>}
 

@@ -56,7 +56,7 @@ export default function Home(){
     <div className="grid md:grid-cols-2 gap-5 mt-10">{insights.map((i,idx)=>{
       const featured = !!i.body;
       const body=<>
-        {i.cover && <div className="relative -mx-7 -mt-7 mb-6 h-48 overflow-hidden rounded-t-[1.75rem]"><Image src={i.cover} alt={i.title} fill className="object-cover group-hover:scale-105 transition duration-500"/></div>}
+        {i.cover && <div className="relative -mx-7 -mt-7 mb-6 aspect-[2/1] overflow-hidden rounded-t-[1.75rem]"><Image src={i.cover} alt={i.coverCaption || i.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition duration-500"/></div>}
         <div className="text-xs uppercase tracking-widest text-gold">{i.category}</div>
         <h3 className={featured?"text-2xl text-navy font-bold mt-4 leading-8":"text-xl text-navy font-semibold mt-4 leading-7"}>{i.title}</h3>
         <p className="text-sm leading-6 text-slate-600 mt-4">{i.excerpt}</p>
