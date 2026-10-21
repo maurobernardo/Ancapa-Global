@@ -65,8 +65,8 @@ export const opportunities = [
 export const insights = [
   {
     slug: "angola-mozambique-gas-infrastructure-investment-opportunities",
-    cover: "/lng-1.jpeg",
-    coverCaption: "Gas processing infrastructure. Illustrative image.",
+    cover: "/ing0.jpeg",
+    coverCaption: "Delegations presentation in Houston",
     category: "Energy & Infrastructure",
     date: "October 21, 2026",
     title: "Beyond LNG: Angola and Mozambique's Next Energy Investment Opportunity Is Infrastructure",
