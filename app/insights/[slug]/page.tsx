@@ -169,7 +169,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
                 <div className="relative overflow-hidden rounded-xl md:rounded-2xl ring-1 ring-inset ring-black/5 shadow-[0_20px_45px_-25px_rgba(8,35,58,.4)]" style={{ aspectRatio: bodyRatios[idx] }}>
                   <Image src={block.img.src} alt={block.img.alt} fill sizes="(min-width: 768px) 700px, 100vw" className="object-cover" />
                 </div>
-                {block.img.caption && <figcaption className="mt-2.5 px-1 text-xs md:text-[.8rem] leading-5 text-slate-500 italic">{block.img.caption}</figcaption>}
+                {(block.img as { caption?: string }).caption && <figcaption className="mt-2.5 px-1 text-xs md:text-[.8rem] leading-5 text-slate-500 italic">{(block.img as { caption?: string }).caption}</figcaption>}
               </figure>}
               {block.p.map((par, pi) => <p key={pi} className={idx === 0 && pi === 0 ? "first-letter:text-6xl first-letter:font-bold first-letter:text-navy first-letter:mr-2 first-letter:float-left first-letter:leading-[0.85]" : undefined}>{par}</p>)}
             </Reveal>
