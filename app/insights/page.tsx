@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { insights } from "@/lib/data";
+import { abs, isoDate, orgId, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -27,6 +28,27 @@ function Meta({ i }: { i: Insight }) {
   </div>;
 }
 
+const listLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "ANCAPA Insights",
+  url: `${siteUrl}/insights`,
+  description: "Commercial intelligence for strategic markets: capital formation, critical minerals corridors, energy and digital infrastructure.",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": orgId },
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: insights.filter((i) => i.body).map((i, n) => ({
+      "@type": "ListItem",
+      position: n + 1,
+      url: `${siteUrl}/insights/${i.slug}`,
+      name: i.title,
+      ...(i.cover ? { image: abs(i.cover) } : {}),
+      datePublished: isoDate(i.date),
+    })),
+  },
+};
+
 export default function Insights() {
   const [first, ...rest] = insights;
   const wrap = (i: Insight, cls: string, children: React.ReactNode) =>
@@ -34,6 +56,7 @@ export default function Insights() {
            : <article key={i.slug} className={cls}>{children}</article>;
 
   return <main className="container pt-8 pb-14 md:pt-10 md:pb-16">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listLd) }} />
     <div className="max-w-3xl">
       <p className="eyebrow">Insights</p>
       <h1 className="display text-5xl md:text-6xl text-navy mt-4">Intelligence for capital and strategic markets.</h1>

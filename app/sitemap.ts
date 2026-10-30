@@ -1,22 +1,31 @@
 import type { MetadataRoute } from "next";
 import { platforms, opportunities, insights } from "@/lib/data";
+import { abs, dateOf, siteUrl as base } from "@/lib/seo";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
+const articles = insights.filter((i) => i.body);
+// Newest article date drives "last modified" for the hubs that list them
+const latest = articles.map((i) => dateOf(i.date)).sort((a, b) => b.getTime() - a.getTime())[0] ?? new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/markets`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/opportunities`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${base}/insights`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${base}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 },
+    { url: base, lastModified: latest, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/about`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/markets`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/opportunities`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/insights`, lastModified: latest, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.6 },
   ];
 
   return [
     ...staticRoutes,
-    ...platforms.map((p) => ({ url: `${base}/platforms/${p.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 })),
-    ...opportunities.map((o) => ({ url: `${base}/opportunities/${o.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 })),
-    ...insights.filter((i) => i.body).map((i) => ({ url: `${base}/insights/${i.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 })),
+    ...platforms.map((p) => ({ url: `${base}/platforms/${p.slug}`, changeFrequency: "monthly" as const, priority: 0.8 })),
+    ...opportunities.map((o) => ({ url: `${base}/opportunities/${o.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...articles.map((i) => ({
+      url: `${base}/insights/${i.slug}`,
+      lastModified: dateOf(i.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...(i.cover ? { images: [abs(i.cover)] } : {}),
+    })),
   ];
 }

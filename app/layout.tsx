@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { company } from "@/lib/data";
+import { company, platforms } from "@/lib/data";
+import { disambiguation, orgId } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
+    locale: "en_US",
     url: siteUrl,
     siteName: company.name,
     title: company.name,
@@ -35,21 +37,41 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: company.name,
-  legalName: company.legal,
-  url: siteUrl,
-  logo: `${siteUrl}/ancapa-logo.png`,
-  foundingDate: String(company.founded),
-  description,
-  slogan: company.tagline,
-  sameAs: [],
-};
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": orgId,
+    name: company.name,
+    alternateName: ["ANCAPA", "ANCAPA Global"],
+    legalName: company.legal,
+    url: siteUrl,
+    logo: `${siteUrl}/ancapa-logo.png`,
+    image: `${siteUrl}/opengraph-image`,
+    foundingDate: String(company.founded),
+    description,
+    disambiguatingDescription: disambiguation,
+    slogan: company.tagline,
+    address: { "@type": "PostalAddress", addressLocality: "San Diego", addressRegion: "CA", addressCountry: "US" },
+    areaServed: ["Africa", "Caribbean", "Southeast Asia"],
+    knowsAbout: ["Critical minerals", "Energy infrastructure", "Project finance", "Digital infrastructure", "Procurement and equipment sourcing", "U.S.-Africa investment", "Natural gas infrastructure", "Market entry advisory"],
+    makesOffer: platforms.map((p) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: p.name, description: p.description, url: `${siteUrl}/platforms/${p.slug}` } })),
+    sameAs: [],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: siteUrl,
+    name: company.name,
+    inLanguage: "en",
+    publisher: { "@id": orgId },
+  },
+];
 
 export default function RootLayout({children}:{children:React.ReactNode}){
  return <html lang="en" className={inter.variable}><body>
+  <link rel="alternate" type="application/rss+xml" title="ANCAPA Insights" href="/insights/feed.xml" />
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   <Header/><main>{children}</main><Footer/>
  </body></html>

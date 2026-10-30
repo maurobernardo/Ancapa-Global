@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, CheckCircle2, ChevronDown } from "lucide-react";
 import { insights, company } from "@/lib/data";
-import { coverRatio } from "@/lib/cover";
+import { coverRatio, coverSize } from "@/lib/cover";
+import { abs, isoDate, orgId } from "@/lib/seo";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareBar } from "@/components/share-bar";
@@ -21,6 +22,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!i) return {};
   const title = i.seoTitle || i.title;
   const description = i.dek || i.excerpt;
+  const size = await coverSize(i.cover);
+  const image = i.cover
+    ? { url: abs(i.cover), ...(size ?? {}), alt: i.coverCaption || i.title }
+    : { url: "/opengraph-image", width: 1200, height: 630 };
   return {
     title,
     description,
@@ -31,12 +36,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       url: `${siteUrl}/insights/${i.slug}`,
-      publishedTime: i.date,
+      publishedTime: isoDate(i.date),
+      modifiedTime: isoDate(i.date),
+      authors: [company.name],
       section: i.category,
       tags: i.keywords,
-      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      locale: "en_US",
+      images: [image],
     },
-    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
   };
 }
 
@@ -51,15 +59,19 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     "@type": "Article",
     headline: i.title,
     description: i.dek || i.excerpt,
-    datePublished: i.date,
-    dateModified: i.date,
+    datePublished: isoDate(i.date),
+    dateModified: isoDate(i.date),
     inLanguage: "en-US",
+    isAccessibleForFree: true,
+    url,
     articleSection: i.category,
     keywords: i.keywords?.join(", "),
     wordCount: i.body!.reduce((n, b) => n + b.p.join(" ").split(/\s+/).length, 0),
-    image: `${siteUrl}/opengraph-image`,
-    author: { "@type": "Organization", name: company.name, url: siteUrl },
-    publisher: { "@type": "Organization", name: company.name, logo: { "@type": "ImageObject", url: `${siteUrl}/ancapa-logo.png` } },
+    image: i.cover ? [abs(i.cover)] : [`${siteUrl}/opengraph-image`],
+    author: { "@id": orgId, "@type": "Organization", name: company.name, url: siteUrl },
+    publisher: { "@id": orgId, "@type": "Organization", name: company.name, logo: { "@type": "ImageObject", url: `${siteUrl}/ancapa-logo.png` } },
+    isPartOf: { "@type": "Blog", name: "ANCAPA Insights", url: `${siteUrl}/insights` },
+    ...(i.sources ? { citation: i.sources.map((x) => ({ "@type": "CreativeWork", name: x.label, url: x.url })) } : {}),
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
   const breadcrumbLd = {
