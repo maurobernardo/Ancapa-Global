@@ -9,6 +9,8 @@ import { abs, isoDate, orgId } from "@/lib/seo";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareBar } from "@/components/share-bar";
+import { RelatedInsights } from "@/components/related-insights";
+import { articleRelated, opportunitiesFor, platformsFor } from "@/lib/related";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
 
@@ -85,6 +87,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
   };
 
   // Show the whole image; only crop when it is taller than 16:10 so portraits don't dominate
+  const rel = articleRelated[i.slug];
   const ratio = Math.max(await coverRatio(i.cover), 1.6);
   // Inline images inside the body: natural ratio, cropped only below 3:2
   const bodyRatios = await Promise.all(i.body!.map(async (b) => ("img" in b && b.img ? Math.max(await coverRatio(b.img.src), 1.5) : 0)));
@@ -191,6 +194,14 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
           </div>)}
         </div>
       </div>
+
+      {rel && <div className="mt-16 print:hidden">
+        <RelatedInsights slugs={rel.articles} eyebrow="Keep reading" title="More from ANCAPA Insights." />
+        <div className="mt-8 flex flex-wrap gap-2">
+          {platformsFor(rel.platforms).map((pl) => <Link key={pl.slug} href={`/platforms/${pl.slug}`} className="chip text-navy">{pl.name} <ArrowRight className="h-3.5 w-3.5" /></Link>)}
+          {opportunitiesFor(rel.opportunities).map((o) => <Link key={o.slug} href={`/opportunities/${o.slug}`} className="chip text-navy">{o.title} <ArrowRight className="h-3.5 w-3.5" /></Link>)}
+        </div>
+      </div>}
 
       <Reveal className="print:hidden">
         <div className="max-w-5xl mt-16 rounded-3xl bg-navy text-white p-8 md:p-12 relative overflow-hidden">
