@@ -5,7 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { RouteProgress } from "@/components/route-progress";
-import { ConsentAnalytics } from "@/components/consent-analytics";
+import { Analytics } from "@/components/analytics";
 import { company, platforms } from "@/lib/data";
 import { disambiguation, orgId } from "@/lib/seo";
 
@@ -77,6 +77,6 @@ export default function RootLayout({children}:{children:React.ReactNode}){
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   <a href="#main" className="skip-link">Skip to content</a>
   <RouteProgress/>
-  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><ConsentAnalytics/>
+  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><Analytics/>
  </body></html>
 }
