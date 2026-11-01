@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Network, ShieldCheck, TrendingUp } from "lucide-react";
 import { regions, insights } from "@/lib/data";
@@ -20,11 +21,7 @@ const regionWork: Record<string, { work: string; platforms: { slug: string; labe
   },
 };
 
-export const metadata: Metadata = {
-  title: "Markets",
-  description: "ANCAPA's market strategy across Africa, the Caribbean and Southeast Asia: growth corridors where structural demand and strategic relevance are converging.",
-  alternates: { canonical: "/markets" },
-};
+export const metadata: Metadata = pageMeta({ title: "Markets", description: "ANCAPA's market strategy across Africa, the Caribbean and Southeast Asia: growth corridors where structural demand and strategic relevance are converging.", path: "/markets" });
 
 export default function Markets(){
  return <div>

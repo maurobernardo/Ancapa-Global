@@ -24,3 +24,8 @@ main:focus{outline:none}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Keep the fixed mobile call to action from covering the footer */
+@media (max-width:767px){footer{padding-bottom:5rem}}
+
+@keyframes route-progress{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}

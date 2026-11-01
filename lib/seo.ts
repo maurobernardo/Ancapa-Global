@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { company } from "@/lib/data";
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
@@ -35,3 +36,16 @@ export const disambiguation =
 
 // Social previews and feeds use a small JPEG copy of each cover (public/og), because not every network renders WebP.
 export const ogImage = (cover: string) => `/og/${cover.split("/").pop()!.replace(/\.\w+$/, ".jpg")}`;
+
+// Per-page metadata with its own Open Graph/Twitter data, so a shared link shows that page's title, description and URL (not the home page's).
+export function pageMeta({ title, description, path, noindex = false }: { title: string; description: string; path: string; noindex?: boolean }): Metadata {
+  const full = `${title} | ${company.name}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
+    openGraph: { type: "website", url: abs(path), siteName: company.name, locale: "en_US", title: full, description, images: [{ url: "/opengraph-image", width: 1200, height: 630 }] },
+    twitter: { card: "summary_large_image", title: full, description, images: ["/opengraph-image"] },
+  };
+}

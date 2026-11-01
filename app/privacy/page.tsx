@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { company } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "How ANCAPA Global Partners handles the personal information you send through this website.",
-  alternates: { canonical: "/privacy" },
-};
+export const metadata: Metadata = pageMeta({ title: "Privacy Policy", description: "How ANCAPA Global Partners handles the personal information you send through this website.", path: "/privacy" });
 
-const updated = "November 1, 2026";
+const updated = "November 2, 2026";
+const analytics = /^G-[A-Z0-9]+$/.test(process.env.NEXT_PUBLIC_GA_ID || "");
 
 export default function Privacy() {
   return <div className="container pt-8 pb-14 md:pt-10 md:pb-16">
@@ -26,7 +24,9 @@ export default function Privacy() {
         <p>Like any website, our hosting provider records basic technical data when you visit, such as IP address, browser type, pages requested and time. We do not use this data to identify you personally. To limit spam, we also count requests per IP address for a few minutes in server memory, and we discard the count afterwards.</p>
 
         <h2>Cookies and tracking</h2>
-        <p>We do not use advertising cookies, analytics scripts or social media trackers. Our hosting and security provider may set technical cookies needed to deliver the site and protect it from abuse.</p>
+        {analytics
+          ? <p>We do not use advertising cookies or social media trackers. With your permission we use Google Analytics to count visits (pages viewed, approximate location, device and browser). It sets cookies only after you click Accept in the banner. You can decline, and you can change your choice at any time with the "Cookie settings" link in the footer. Google acts as our service provider for this. Our hosting and security provider may also set technical cookies needed to deliver the site and protect it from abuse.</p>
+          : <p>We do not use advertising cookies, analytics scripts or social media trackers. Our hosting and security provider may set technical cookies needed to deliver the site and protect it from abuse.</p>}
 
         <h2>Why we use it</h2>
         <p>To read and answer your inquiry, to assess a possible partnership or project, and to keep the website secure. We do not use your details for unrelated marketing, and we do not sell your personal information.</p>

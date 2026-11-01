@@ -6,13 +6,13 @@ import { opportunities } from "@/lib/data";
 import { opportunityDetail } from "@/lib/opportunity-detail";
 import { platformsFor } from "@/lib/related";
 import { RelatedInsights } from "@/components/related-insights";
-import { siteUrl } from "@/lib/seo";
+import { pageMeta, siteUrl } from "@/lib/seo";
 
 export function generateStaticParams(){ return opportunities.map(o=>({slug:o.slug})); }
 
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}): Promise<Metadata> {
  const {slug}=await params; const o=opportunities.find(x=>x.slug===slug); if(!o) return {};
- return { title: o.title, description: o.summary, alternates: { canonical: `/opportunities/${o.slug}` } };
+ return pageMeta({ title: o.title, description: o.summary, path: `/opportunities/${o.slug}` });
 }
 
 export default async function OpportunityPage({ params }: { params: Promise<{slug:string}> }){

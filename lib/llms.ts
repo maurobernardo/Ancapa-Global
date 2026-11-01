@@ -16,6 +16,7 @@ ${disambiguation}
 - [About ANCAPA](${siteUrl}/about): Company overview, founding story and operating model (Originate, Validate, Structure, Mobilize, Execute).
 - [Contact](${siteUrl}/contact): Start a conversation with ANCAPA for investment, partnership, procurement or advisory inquiries.
 - [Privacy Policy](${siteUrl}/privacy): How personal information sent through the website is handled.
+- [Terms of Use](${siteUrl}/terms): Terms for using the website, including that its content is not investment advice or an offer of securities.
 
 ## Platforms
 

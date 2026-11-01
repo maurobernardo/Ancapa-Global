@@ -3,13 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { insights } from "@/lib/data";
-import { abs, isoDate, orgId, siteUrl } from "@/lib/seo";
+import { abs, isoDate, orgId, siteUrl, pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Insights",
-  description: "Commercial intelligence for strategic markets: perspectives on capital formation, critical minerals corridors and digital infrastructure across ANCAPA's focus markets.",
-  alternates: { canonical: "/insights" },
-};
+export const metadata: Metadata = pageMeta({ title: "Insights", description: "Commercial intelligence for strategic markets: perspectives on capital formation, critical minerals corridors and digital infrastructure across ANCAPA's focus markets.", path: "/insights" });
 
 type Insight = (typeof insights)[number];
 

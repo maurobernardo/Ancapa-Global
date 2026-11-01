@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { MobileCta } from "@/components/mobile-cta";
+import { RouteProgress } from "@/components/route-progress";
+import { ConsentAnalytics } from "@/components/consent-analytics";
 import { company, platforms } from "@/lib/data";
 import { disambiguation, orgId } from "@/lib/seo";
 
@@ -18,7 +21,6 @@ export const metadata: Metadata = {
   keywords: ["ANCAPA Global Partners", "U.S. investment platform", "Africa investment", "Caribbean investment", "Southeast Asia investment", "capital raising", "project finance", "energy infrastructure", "critical minerals", "market entry advisory"],
   authors: [{ name: "ANCAPA Global Partners" }],
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
-  icons: { icon: "/icone.jpeg", shortcut: "/icone.jpeg", apple: "/icone.jpeg" },
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
@@ -74,6 +76,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
   <link rel="alternate" type="application/rss+xml" title="ANCAPA Insights" href="/insights/feed.xml" />
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   <a href="#main" className="skip-link">Skip to content</a>
-  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/>
+  <RouteProgress/>
+  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><ConsentAnalytics/>
  </body></html>
 }
