@@ -47,7 +47,7 @@ export default function Home(){
       <div>
         <div className="flex items-center gap-3">
           <p className="eyebrow">Insights</p>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 text-gold text-[.7rem] font-bold uppercase tracking-widest px-3 py-1"><BookOpen className="h-3.5 w-3.5"/>New article</span>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 text-gold-ink text-[.7rem] font-bold uppercase tracking-widest px-3 py-1"><BookOpen className="h-3.5 w-3.5"/>New article</span>
         </div>
         <h2 className="display text-4xl md:text-5xl text-navy mt-3">Commercial intelligence for strategic markets.</h2>
       </div>
@@ -57,11 +57,11 @@ export default function Home(){
       const featured = !!i.body;
       const body=<>
         {i.cover && <div className="relative -mx-7 -mt-7 mb-6 aspect-[2/1] overflow-hidden rounded-t-[1.75rem]"><Image src={i.cover} alt={i.coverCaption || i.title} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition duration-500"/></div>}
-        <div className="text-xs uppercase tracking-widest text-gold">{i.category}</div>
+        <div className="text-xs uppercase tracking-widest text-gold-ink">{i.category}</div>
         <h3 className={featured?"text-2xl text-navy font-bold mt-4 leading-8":"text-xl text-navy font-semibold mt-4 leading-7"}>{i.title}</h3>
         <p className="text-sm leading-6 text-slate-600 mt-4">{i.excerpt}</p>
         <div className="mt-8 flex items-center justify-between">
-          <span className="text-xs text-slate-400">{i.date}</span>
+          <span className="text-xs text-slate-500">{i.date}</span>
           {featured && <span className="btn btn-dark py-2! px-4! text-xs!">Read article <ArrowRight className="ml-1.5 h-3.5 w-3.5"/></span>}
         </div>
       </>;

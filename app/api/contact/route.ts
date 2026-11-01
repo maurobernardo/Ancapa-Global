@@ -5,6 +5,20 @@ function clean(value: unknown, max = 2000) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
 }
 
+// Single-line fields end up in email headers: drop line breaks and control characters.
+const oneLine = (v: string) => v.replace(/[\x00-\x1f\x7f]+/g, " ").trim();
+
+// Per-IP limit (in memory, per server instance): 5 inquiries every 10 minutes.
+const hits = new Map<string, number[]>();
+function limited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) || []).filter((t) => now - t < 10 * 60 * 1000);
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear();
+  return recent.length > 5;
+}
+
 const CONTACT_TO = process.env.CONTACT_TO_EMAIL || "ainguane@ancapaglobal.com";
 
 async function sendEmail(payload: Record<string, string>) {
@@ -37,13 +51,16 @@ async function sendEmail(payload: Record<string, string>) {
 }
 
 export async function POST(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  if (limited(ip)) return NextResponse.json({ error: "Too many requests. Please try again in a few minutes." }, { status: 429 });
+
   const body = await request.json().catch(() => null);
   if (!body || typeof body !== "object") return NextResponse.json({ error: "Invalid request." }, { status: 400 });
 
-  const name = clean(body.name, 120);
+  const name = oneLine(clean(body.name, 120));
   const email = clean(body.email, 180).toLowerCase();
-  const organization = clean(body.organization, 180);
-  const interest = clean(body.interest, 120);
+  const organization = oneLine(clean(body.organization, 180));
+  const interest = oneLine(clean(body.interest, 120));
   const message = clean(body.message, 3000);
   const honeypot = clean(body.website, 200);
 
@@ -63,7 +80,11 @@ export async function POST(request: NextRequest) {
       if (!response.ok) return NextResponse.json({ error: "Inquiry service is temporarily unavailable." }, { status: 502 });
     }
 
-    if (!emailed && !webhook) console.info("ANCAPA inquiry", payload);
+    // Never log inquiry contents (personal data). With no delivery channel configured, fail loudly instead of losing the message.
+    if (!emailed && !webhook) {
+      console.error("ANCAPA inquiry not delivered: no SMTP or webhook configured");
+      return NextResponse.json({ error: "Unable to send your inquiry right now. Please try again shortly." }, { status: 503 });
+    }
   } catch (error) {
     console.error("ANCAPA inquiry delivery failed", error);
     return NextResponse.json({ error: "Unable to send your inquiry right now. Please try again shortly." }, { status: 502 });

@@ -1,5 +1,5 @@
 import { company, platforms, regions, opportunities, insights } from "@/lib/data";
-import { abs, disambiguation, isoDate, siteUrl } from "@/lib/seo";
+import { abs, disambiguation, isoDate, ogImage, siteUrl } from "@/lib/seo";
 
 const articles = insights.filter((i) => i.body);
 
@@ -15,6 +15,7 @@ ${disambiguation}
 
 - [About ANCAPA](${siteUrl}/about): Company overview, founding story and operating model (Originate, Validate, Structure, Mobilize, Execute).
 - [Contact](${siteUrl}/contact): Start a conversation with ANCAPA for investment, partnership, procurement or advisory inquiries.
+- [Privacy Policy](${siteUrl}/privacy): How personal information sent through the website is handled.
 
 ## Platforms
 
@@ -95,7 +96,7 @@ export function rss(): string {
       <guid isPermaLink="true">${siteUrl}/insights/${i.slug}</guid>
       <pubDate>${new Date(isoDate(i.date).length === 7 ? `${isoDate(i.date)}-01T00:00:00Z` : `${isoDate(i.date)}T00:00:00Z`).toUTCString()}</pubDate>
       <category>${esc(i.category)}</category>
-      <description>${esc(i.dek || i.excerpt)}</description>${i.cover ? `\n      <enclosure url="${abs(i.cover)}" type="image/${i.cover.endsWith(".png") ? "png" : "jpeg"}" length="0" />` : ""}
+      <description>${esc(i.dek || i.excerpt)}</description>${i.cover ? `\n      <enclosure url="${abs(ogImage(i.cover))}" type="image/jpeg" length="0" />` : ""}
     </item>`).join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

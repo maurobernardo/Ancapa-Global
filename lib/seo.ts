@@ -32,3 +32,6 @@ export const orgId = `${siteUrl}/#organization`;
 
 export const disambiguation =
   `${company.name} (${company.legal}) is a U.S.-based investment and strategic development platform headquartered in ${company.location}. It is not affiliated with AnaCap Financial Partners (London), Anacapa Partners, or ANCAP (Administración Nacional de Combustibles, Alcohol y Portland, Uruguay).`;
+
+// Social previews and feeds use a small JPEG copy of each cover (public/og), because not every network renders WebP.
+export const ogImage = (cover: string) => `/og/${cover.split("/").pop()!.replace(/\.\w+$/, ".jpg")}`;

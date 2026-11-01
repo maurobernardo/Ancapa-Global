@@ -19,7 +19,7 @@ export function RelatedInsights({ slugs, eyebrow = "Related analysis", title = "
         <div className="p-5 flex flex-col flex-1">
           <h3 className="text-base font-semibold text-navy leading-6">{i.title}</h3>
           <p className="mt-2 text-sm leading-6 text-slate-600 line-clamp-3">{i.excerpt}</p>
-          <div className="mt-auto pt-4 flex items-center justify-between text-xs text-slate-400">
+          <div className="mt-auto pt-4 flex items-center justify-between text-xs text-slate-500">
             <span className="flex items-center gap-3">{i.date}{i.readTime && <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{i.readTime}</span>}</span>
             <ArrowRight className="h-4 w-4 text-navy transition group-hover:translate-x-1" />
           </div>

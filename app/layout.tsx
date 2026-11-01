@@ -9,7 +9,7 @@ import { disambiguation, orgId } from "@/lib/seo";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ancapaglobal.com";
-const description = "A U.S.-anchored investment consulting and strategic development platform connecting capital, technology and operating partners with high-growth opportunities across Africa, the Caribbean and Southeast Asia.";
+const description = "U.S.-anchored investment platform connecting capital, technology and operating partners with growth opportunities in Africa, the Caribbean and Southeast Asia.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -46,7 +46,7 @@ const jsonLd = [
     alternateName: ["ANCAPA", "ANCAPA Global"],
     legalName: company.legal,
     url: siteUrl,
-    logo: `${siteUrl}/ancapa-logo.png`,
+    logo: `${siteUrl}/ancapa-logo.webp`,
     image: `${siteUrl}/opengraph-image`,
     foundingDate: String(company.founded),
     description,
@@ -73,6 +73,7 @@ export default function RootLayout({children}:{children:React.ReactNode}){
  return <html lang="en" className={inter.variable}><body>
   <link rel="alternate" type="application/rss+xml" title="ANCAPA Insights" href="/insights/feed.xml" />
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-  <Header/><main>{children}</main><Footer/>
+  <a href="#main" className="skip-link">Skip to content</a>
+  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/>
  </body></html>
 }

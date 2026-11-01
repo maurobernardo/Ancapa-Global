@@ -5,7 +5,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/" className="flex items-center group shrink-0" aria-label="ANCAPA Global Partners home">
       <Image
-        src="/ancapa-logo.png"
+        src="/ancapa-logo.webp"
         alt="ANCAPA Global Partners"
         width={500}
         height={500}

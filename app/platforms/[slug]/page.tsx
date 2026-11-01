@@ -11,7 +11,8 @@ export function generateStaticParams(){ return platforms.map(p=>({slug:p.slug}))
 
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}): Promise<Metadata> {
  const {slug}=await params; const p=platforms.find(x=>x.slug===slug); if(!p) return {};
- return { title: p.name, description: p.description, alternates: { canonical: `/platforms/${p.slug}` } };
+ const description = p.description.length > 160 ? p.description.split(", including")[0].replace(/\.$/, "") + "." : p.description;
+ return { title: p.name, description, alternates: { canonical: `/platforms/${p.slug}` } };
 }
 
 function SupplyPage({p}:{p:(typeof platforms)[number]}){

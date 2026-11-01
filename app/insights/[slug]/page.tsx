@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight, Clock, CheckCircle2, ChevronDown } from "lucide-react";
 import { insights, company } from "@/lib/data";
 import { coverRatio, coverSize } from "@/lib/cover";
-import { abs, isoDate, orgId } from "@/lib/seo";
+import { abs, isoDate, orgId, ogImage } from "@/lib/seo";
 import { Reveal } from "@/components/reveal";
 import { ReadingProgress } from "@/components/reading-progress";
 import { ShareBar } from "@/components/share-bar";
@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const i = insights.find((x) => x.slug === slug && x.body);
   if (!i) return {};
   const title = i.seoTitle || i.title;
-  const description = i.dek || i.excerpt;
-  const size = await coverSize(i.cover);
+  const description = i.metaDescription || i.dek || i.excerpt;
+  const size = i.cover ? await coverSize(ogImage(i.cover)) : null;
   const image = i.cover
-    ? { url: abs(i.cover), ...(size ?? {}), alt: i.coverCaption || i.title }
+    ? { url: abs(ogImage(i.cover)), ...(size ?? {}), alt: i.coverCaption || i.title }
     : { url: "/opengraph-image", width: 1200, height: 630 };
   return {
-    title,
+    title: { absolute: title },
     description,
     keywords: i.keywords,
     alternates: { canonical: `/insights/${i.slug}` },
@@ -69,9 +69,9 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     articleSection: i.category,
     keywords: i.keywords?.join(", "),
     wordCount: i.body!.reduce((n, b) => n + b.p.join(" ").split(/\s+/).length, 0),
-    image: i.cover ? [abs(i.cover)] : [`${siteUrl}/opengraph-image`],
+    image: i.cover ? [abs(ogImage(i.cover))] : [`${siteUrl}/opengraph-image`],
     author: { "@id": orgId, "@type": "Organization", name: company.name, url: siteUrl },
-    publisher: { "@id": orgId, "@type": "Organization", name: company.name, logo: { "@type": "ImageObject", url: `${siteUrl}/ancapa-logo.png` } },
+    publisher: { "@id": orgId, "@type": "Organization", name: company.name, logo: { "@type": "ImageObject", url: `${siteUrl}/ancapa-logo.webp` } },
     isPartOf: { "@type": "Blog", name: "ANCAPA Insights", url: `${siteUrl}/insights` },
     ...(i.sources ? { citation: i.sources.map((x) => ({ "@type": "CreativeWork", name: x.label, url: x.url })) } : {}),
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -92,7 +92,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
   // Inline images inside the body: natural ratio, cropped only below 3:2
   const bodyRatios = await Promise.all(i.body!.map(async (b) => ("img" in b && b.img ? Math.max(await coverRatio(b.img.src), 1.5) : 0)));
 
-  return <main className="bg-white">
+  return <div className="bg-white">
     <ReadingProgress />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
@@ -100,10 +100,10 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
     {/* Print-only cover, shown when saving/printing as PDF */}
     <div className="hidden print:block px-2 pt-4 pb-8">
       <div className="flex items-center justify-between border-b-2 border-navy pb-4">
-        <Image src="/ancapa-logo.png" alt="ANCAPA Global Partners" width={500} height={500} className="h-16 w-auto object-contain" />
+        <Image src="/ancapa-logo.webp" alt="ANCAPA Global Partners" width={500} height={500} className="h-16 w-auto object-contain" />
         <span className="text-[.7rem] tracking-[.2em] uppercase text-slate-500">Insights · {i.category}</span>
       </div>
-      <h1 className="display mt-8 text-4xl leading-tight text-navy">{i.title}</h1>
+      <p className="display mt-8 text-4xl leading-tight text-navy">{i.title}</p>
       <p className="mt-4 text-lg leading-7 text-slate-600">{i.dek || i.excerpt}</p>
       <div className="mt-6 flex items-center gap-3 text-sm text-slate-500">
         <span className="font-semibold text-navy">{company.name}</span>
@@ -169,7 +169,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
       <div className="max-w-5xl grid md:grid-cols-[1fr_2.4fr] gap-10 items-start">
         {i.takeaways && <Reveal className="md:sticky md:top-28 order-2 md:order-1">
           <div className="card p-6 bg-[#f7f5ef] border-none hover:-translate-y-1">
-            <p className="text-[.68rem] font-bold uppercase tracking-[.18em] text-gold">Key takeaways</p>
+            <p className="text-[.68rem] font-bold uppercase tracking-[.18em] text-gold-ink">Key takeaways</p>
             <ul className="mt-4 space-y-4">
               {i.takeaways.map((t, idx) => <li key={idx} className="flex gap-3 text-sm leading-6 text-slate-700"><CheckCircle2 className="h-4 w-4 mt-0.5 shrink-0 text-navy" />{t}</li>)}
             </ul>
@@ -179,7 +179,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         <div className="proseish order-1 md:order-2">
           {i.body!.map((block, idx) => <div key={idx}>
             <Reveal delay={idx * 60}>
-              {block.h && <h2 className="flex items-baseline gap-3"><span className="text-gold text-base font-bold tabular-nums">{String(idx).padStart(2, "0")}</span>{block.h}</h2>}
+              {block.h && <h2 className="flex items-baseline gap-3"><span className="text-gold-ink text-base font-bold tabular-nums">{String(idx).padStart(2, "0")}</span>{block.h}</h2>}
               {"img" in block && block.img && <figure className="my-7 not-prose">
                 <div className="relative overflow-hidden rounded-xl md:rounded-2xl ring-1 ring-inset ring-black/5 shadow-[0_20px_45px_-25px_rgba(8,35,58,.4)]" style={{ aspectRatio: bodyRatios[idx] }}>
                   <Image src={block.img.src} alt={block.img.alt} fill sizes="(min-width: 768px) 700px, 100vw" className="object-cover" />
@@ -226,5 +226,5 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
         </div>}
       </div>}
     </article>
-  </main>;
+  </div>;
 }

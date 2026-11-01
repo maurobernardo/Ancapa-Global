@@ -12,12 +12,12 @@ export const company = {
 };
 
 export const platforms = [
-  { slug: "energy", name: "ANCAPA Energy", short: "Energy", icon: Bolt, logo: "/ANCAPA_Energy_logo-removebg-preview.png", accent: "#66C17B", headline: "Powering growth markets.", description: "Origination, development and investment support across renewable generation, grids, storage, distributed energy and energy access.", focus: ["Renewable generation", "Grid modernization", "Distributed energy", "Storage", "Energy access", "Project development"] },
-  { slug: "resources", name: "ANCAPA Resources", short: "Resources", icon: Gem, logo: "/ANCAPA_Resources_logo-removebg-preview.png", accent: "#B57842", headline: "Strategic resources. Global relevance.", description: "Critical minerals, mining development, processing, supply chains and resource intelligence for strategic markets.", focus: ["Critical minerals", "Mine development", "Oil and Gas", "Supply chains", "Offtake strategy", "Resource intelligence"] },
-  { slug: "digital", name: "ANCAPA Digital", short: "Digital", icon: Cpu, logo: "/ANCAPA_Digital_logo-removebg-preview.png", accent: "#2D7FF9", headline: "Digital infrastructure for modern economies.", description: "AI, data infrastructure, enterprise digitization, fintech enablement and digital public infrastructure.", focus: ["AI & automation", "Data infrastructure", "Fintech", "Enterprise digitization", "Digital public infrastructure", "Cyber-resilient systems"] },
-  { slug: "capital", name: "ANCAPA Capital", short: "Capital", icon: Landmark, logo: "/ANCAPA_Capital_logo-removebg-preview.png", accent: "#C6A15B", headline: "Capital aligned with opportunity.", description: "Investor origination, project finance, strategic advisory, transaction support and market-entry execution.", focus: ["Capital raising", "Project finance", "Investor origination", "Transaction support", "Market entry", "Strategic partnerships"] },
-  { slug: "infrastructure", name: "ANCAPA Infrastructure", short: "Infrastructure", icon: Building2, logo: "/ANCAPA_Infrastructure_logo-removebg-preview.png", accent: "#477E8F", headline: "Infrastructure that unlocks growth.", description: "Transport, ports, logistics, industrial facilities, water systems and enabling infrastructure for high-growth markets.", focus: ["Transport", "Ports & logistics", "Industrial infrastructure", "Water systems", "Urban systems", "Digital infrastructure"] },
-  { slug: "supply", name: "ANCAPA Supply", short: "Supply", icon: PackageCheck, logo: "/ancapa-supply-logo.png", accent: "#C4561F", headline: "Sourcing the equipment projects run on.", description: "Qualified supplier sourcing, technical evaluation and procurement coordination for energy, resources, digital, capital and infrastructure projects, including access to U.S. manufacturers and technology providers.", focus: ["Equipment sourcing", "Supplier qualification", "Technical specification review", "Commercial comparison", "Logistics and shipping", "After-sales coordination"] },
+  { slug: "energy", name: "ANCAPA Energy", short: "Energy", icon: Bolt, logo: "/ANCAPA_Energy_logo-removebg-preview.webp", accent: "#66C17B", headline: "Powering growth markets.", description: "Origination, development and investment support across renewable generation, grids, storage, distributed energy and energy access.", focus: ["Renewable generation", "Grid modernization", "Distributed energy", "Storage", "Energy access", "Project development"] },
+  { slug: "resources", name: "ANCAPA Resources", short: "Resources", icon: Gem, logo: "/ANCAPA_Resources_logo-removebg-preview.webp", accent: "#B57842", headline: "Strategic resources. Global relevance.", description: "Critical minerals, mining development, processing, supply chains and resource intelligence for strategic markets.", focus: ["Critical minerals", "Mine development", "Oil and Gas", "Supply chains", "Offtake strategy", "Resource intelligence"] },
+  { slug: "digital", name: "ANCAPA Digital", short: "Digital", icon: Cpu, logo: "/ANCAPA_Digital_logo-removebg-preview.webp", accent: "#2D7FF9", headline: "Digital infrastructure for modern economies.", description: "AI, data infrastructure, enterprise digitization, fintech enablement and digital public infrastructure.", focus: ["AI & automation", "Data infrastructure", "Fintech", "Enterprise digitization", "Digital public infrastructure", "Cyber-resilient systems"] },
+  { slug: "capital", name: "ANCAPA Capital", short: "Capital", icon: Landmark, logo: "/ANCAPA_Capital_logo-removebg-preview.webp", accent: "#C6A15B", headline: "Capital aligned with opportunity.", description: "Investor origination, project finance, strategic advisory, transaction support and market-entry execution.", focus: ["Capital raising", "Project finance", "Investor origination", "Transaction support", "Market entry", "Strategic partnerships"] },
+  { slug: "infrastructure", name: "ANCAPA Infrastructure", short: "Infrastructure", icon: Building2, logo: "/ANCAPA_Infrastructure_logo-removebg-preview.webp", accent: "#477E8F", headline: "Infrastructure that unlocks growth.", description: "Transport, ports, logistics, industrial facilities, water systems and enabling infrastructure for high-growth markets.", focus: ["Transport", "Ports & logistics", "Industrial infrastructure", "Water systems", "Urban systems", "Digital infrastructure"] },
+  { slug: "supply", name: "ANCAPA Supply", short: "Supply", icon: PackageCheck, logo: "/ancapa-supply-logo.webp", accent: "#C4561F", headline: "Sourcing the equipment projects run on.", description: "Qualified supplier sourcing, technical evaluation and procurement coordination for energy, resources, digital, capital and infrastructure projects, including access to U.S. manufacturers and technology providers.", focus: ["Equipment sourcing", "Supplier qualification", "Technical specification review", "Commercial comparison", "Logistics and shipping", "After-sales coordination"] },
 ];
 
 export const supplySectors = [
@@ -65,7 +65,7 @@ export const opportunities = [
 export const insights = [
   {
     slug: "angola-mozambique-gas-infrastructure-investment-opportunities",
-    cover: "/ing0.jpeg",
+    cover: "/ing0.webp",
     coverCaption: "Delegations presentation in Houston",
     category: "Energy & Infrastructure",
     date: "October 21, 2026",
@@ -73,7 +73,8 @@ export const insights = [
     excerpt: "From gas production to industrial development, the next investment cycle will depend on connecting resources, infrastructure, technology and commercially viable markets.",
     dek: "From gas production to industrial development, the next investment cycle will depend on connecting resources, infrastructure, technology, and commercially viable markets.",
     readTime: "13 min read",
-    seoTitle: "Angola & Mozambique Gas Infrastructure: The Next Investment Opportunity",
+    seoTitle: "Angola and Mozambique Gas Infrastructure: Investment Beyond LNG",
+    metaDescription: "How Angola and Mozambique are turning gas into industry: pipelines, small-scale LNG, fertilizer and the bankable demand that decides what gets built.",
     keywords: ["Angola gas", "Mozambique LNG", "USTDA", "U.S.-Africa investment", "midstream infrastructure", "industrial development", "Angola Natural Gas Master Plan", "Mozambique petroleum regulations"],
     takeaways: [
       "The investment narrative in Angola and Mozambique is widening from gas production and LNG exports to domestic gas use, industrial development and the infrastructure that connects supply with demand.",
@@ -86,7 +87,7 @@ export const insights = [
         "The discussions revealed an important shift in how both countries are approaching their natural gas resources. For years, the investment narrative has been dominated by exploration, production, and liquefied natural gas (LNG) exports. Today, the conversation is expanding toward domestic gas utilization, industrial development, energy security, regional connectivity, and the infrastructure required to support these ambitions.",
         "The next investment opportunity is not simply extracting and exporting more gas. It is building the industrial and commercial systems that allow gas resources to generate broader economic value. For U.S. companies, this creates opportunities across engineering, industrial equipment, energy infrastructure, technology, logistics, and specialized services. For Angola and Mozambique, it raises a more consequential question: how quickly can resource potential be converted into commercially viable projects?",
       ] },
-      { h: "Angola: building a domestic gas economy", img: { src: "/lng-2.jpeg", alt: "Aerial view of an LNG terminal with storage tanks and jetties" }, p: [
+      { h: "Angola: building a domestic gas economy", img: { src: "/lng-2.webp", alt: "Aerial view of an LNG terminal with storage tanks and jetties" }, p: [
         "Angola's presentation offered a structured view of its natural gas development strategy, anchored in the country's Natural Gas Master Plan approved in March 2025. The strategy addresses four interconnected areas: resources, infrastructure, markets, and the regulatory framework.",
         "Angola already possesses an established LNG export industry, centered on the Angola LNG facility in Soyo, with approximately 5.2 million tonnes per annum of design production capacity. The development of non-associated gas represents another important milestone. The Quiluma-Maboqueiro project is intended to strengthen the availability of gas beyond volumes associated with oil production. This could improve supply flexibility and support the development of a more diversified domestic gas market.",
         "However, the most significant opportunity presented was not the volume of gas available. It was the infrastructure required to move that gas from producing areas to industrial customers across the country.",
@@ -96,7 +97,7 @@ export const insights = [
         "The Lobito Corridor connection. One particularly important dimension is the potential integration of gas infrastructure with the Lobito Corridor. The corridor is gaining international attention as a strategic logistics route connecting Angola's Atlantic coast with mineral-producing regions in the Democratic Republic of Congo and Zambia. Its long-term economic potential extends beyond transportation. Mining operations, mineral processing facilities, logistics centers, and industrial manufacturers all require dependable energy.",
         "A reliable gas supply, where commercially and environmentally appropriate, could complement existing electricity infrastructure and improve industrial energy security. This creates the possibility of a broader industrial development model in which transportation, electricity, natural gas, and manufacturing investments reinforce one another. The Lobito Corridor could become more than a route for moving minerals. With coordinated investment, it could support industrial activity along the value chain. The challenge will be ensuring that infrastructure development is matched by credible industrial demand.",
       ] },
-      { h: "Mozambique: turning resource potential into economic infrastructure", img: { src: "/lng-3.jpeg", alt: "Aerial view of a gas processing plant with LNG storage tanks beside the coast" }, p: [
+      { h: "Mozambique: turning resource potential into economic infrastructure", img: { src: "/lng-3.webp", alt: "Aerial view of a gas processing plant with LNG storage tanks beside the coast" }, p: [
         "Mozambique's investment proposition is equally significant, although its development priorities and institutional challenges differ. The country possesses substantial natural gas resources, particularly in the Rovuma Basin, alongside established gas production in the south. Its geographical position also provides access to regional markets through the Nacala, Beira, and Maputo transport corridors.",
         "During the briefing, Mozambique's representatives emphasized that the country's opportunity extends beyond LNG exports. Natural gas could support electricity generation, fertilizer production, petrochemicals, industrial manufacturing, and energy supply to neighboring economies. The presentations also highlighted opportunities for LNG receiving terminals, domestic gas transportation, and industrial energy infrastructure. These developments are particularly relevant as Mozambique considers how to diversify its energy supply and reduce dependence on individual producing fields.",
         "A new emphasis on project execution. One of the most notable institutional developments presented was Mozambique's Central Office for Reforms and Strategic Projects. Operating under the Presidency, the office was described as a mechanism to coordinate strategic reforms, improve alignment among government institutions, track implementation, and address obstacles delaying priority investments. Its areas of focus include energy, logistics corridors, agribusiness, tourism, and capacity building.",
@@ -155,7 +156,7 @@ export const insights = [
   },
   {
     slug: "angola-ai-digital-infrastructure-hub",
-    cover: "/powering.jpg",
+    cover: "/powering.webp",
     coverCaption: "PRODEL-EP power facility, Angola",
     category: "Digital",
     date: "October 2026",
@@ -163,7 +164,8 @@ export const insights = [
     excerpt: "As AI infrastructure faces rising electricity costs, grid constraints and public opposition in established Western markets, Angola's expanding renewable capacity and transatlantic connectivity could open a new frontier for computing investment.",
     dek: "As AI infrastructure faces rising electricity costs, grid constraints, and public opposition in established Western markets, Angola's expanding renewable energy capacity and transatlantic digital connectivity could open a new frontier for investment in computing infrastructure.",
     readTime: "12 min read",
-    seoTitle: "Angola AI Data Centers: Renewable Power, Atlantic Connectivity and Investment",
+    seoTitle: "Angola AI Data Centers: Renewable Power and Atlantic Links",
+    metaDescription: "Angola's renewable power and South Atlantic cable links could host AI computing. What the opportunity looks like and the safeguards it needs.",
     keywords: ["Angola data centers", "AI infrastructure Africa", "Angola renewable energy", "Angola Cables SACS", "Caculo Cabaça hydropower", "SADC digital infrastructure", "Atlantic AI Infrastructure Corridor"],
     takeaways: [
       "The AI race is becoming an energy race: reliable, competitively priced electricity and high-capacity connectivity are emerging as the next competitive advantage for computing infrastructure.",
@@ -236,14 +238,15 @@ export const insights = [
   },
   {
     slug: "africa-second-mining-boom",
-    cover: "/the-mine.jpg",
+    cover: "/the-mine.webp",
     category: "Resources",
     date: "October 2026",
     title: "The Mine Is Only the Beginning: Who Will Capture Africa's Second Mining Boom?",
     excerpt: "As global competition for critical minerals accelerates, a potentially larger commercial opportunity is emerging beyond extraction, in the energy, infrastructure, technology, equipment and industries that make mining possible.",
     dek: "As global competition for critical minerals accelerates, a potentially larger commercial opportunity is emerging beyond extraction in the energy systems, infrastructure, technology, equipment, and industries that make mining possible.",
     readTime: "9 min read",
-    seoTitle: "Africa's Second Mining Boom: Infrastructure, Equipment and Investment Beyond the Mine",
+    seoTitle: "Africa's Second Mining Boom: Opportunity Beyond the Mine",
+    metaDescription: "Africa's next mining boom may be everything around the mine: power, equipment, logistics and services open to African and U.S. firms.",
     keywords: ["Africa mining investment", "Lobito Corridor", "DFC Africa equity", "Mozambique graphite", "Angola rare earths", "mining supply chain Africa", "U.S. industrial suppliers Africa"],
     takeaways: [
       "Every major mine needs an ecosystem of power, water, equipment, logistics and digital systems, and that ecosystem is Africa's second mining investment boom.",
@@ -308,7 +311,7 @@ export const insights = [
   },
   {
     slug: "mozambique-angola-critical-minerals",
-    cover: "/nova.jpeg",
+    cover: "/nova.webp",
     coverCaption: "Mineral project site in Southern Africa",
     category: "Resources",
     date: "October 2026",
@@ -316,7 +319,8 @@ export const insights = [
     excerpt: "Why development finance, private capital, regulatory reform, and political and economic predictability could position two Southern African economies as strategic partners in the next generation of global mineral supply chains.",
     dek: "Why development finance, private capital, regulatory reform, and political and economic predictability could position two Southern African economies as strategic partners in the next generation of global mineral supply chains.",
     readTime: "10 min read",
-    seoTitle: "Mozambique and Angola Critical Minerals: Investment, DFC and Development Finance",
+    seoTitle: "Mozambique and Angola Critical Minerals: DFC and Investment",
+    metaDescription: "Why development finance, private capital and regulatory reform could make Mozambique and Angola strategic partners in critical mineral supply chains.",
     keywords: ["Mozambique critical minerals", "Angola critical minerals", "Balama graphite", "Longonjo rare earths", "DFC critical minerals Africa", "development finance institutions", "Mozambique Mining Law 2026"],
     takeaways: [
       "The global minerals challenge is increasingly a capital challenge: deposits do not become supply without infrastructure, predictable regulation, buyers and investor confidence.",
@@ -385,7 +389,7 @@ export const insights = [
   },
   {
     slug: "lobito-corridor-investment-frontier",
-    cover: "/lobito.jpg",
+    cover: "/lobito.webp",
     coverCaption: "Benguela Railway Station. Photo: David Stanley via Wikimedia Commons.",
     category: "Resources",
     date: "October 2026",
@@ -393,7 +397,8 @@ export const insights = [
     excerpt: "Why the latest developments in Angola, Zambia, and the DRC could open a new phase of U.S.-Africa investment, infrastructure development, and regional industrialization.",
     dek: "Why the latest developments in Angola, Zambia, and the DRC could open a new phase of U.S.-Africa investment, infrastructure development, and regional industrialization.",
     readTime: "7 min read",
-    seoTitle: "Lobito Corridor Investment: From Critical Minerals to Bankable Industrial Growth",
+    seoTitle: "Lobito Corridor: From Critical Minerals to Industrial Growth",
+    metaDescription: "Angola, Zambia and the DRC are opening a new phase of U.S.-Africa investment along the Lobito Corridor, from minerals to bankable industrial projects.",
     keywords: ["Lobito Corridor", "Lobito Corridor investment", "Zambia critical minerals", "Angola Zambia DRC", "U.S.-Africa investment", "copper cobalt supply chain", "DFC EXIM USTDA"],
     takeaways: [
       "Zambia's finance minister says road connectivity financing for the corridor is secured, with procurement and construction next. The breakdown and timetable are still to be clarified.",
@@ -471,8 +476,9 @@ export const insights = [
     excerpt: "Africa's mineral potential will draw lasting U.S. investment when sponsors can show credible projects, viable infrastructure and a clear route to market.",
     dek: "Africa's mineral potential will draw lasting U.S. investment when sponsors can show credible projects, viable infrastructure and a clear route to market.",
     readTime: "5 min read",
-    seoTitle: "U.S.-Africa Minerals Diplomacy: From Strategy to Investable Projects",
-    cover: "/artigo1.png",
+    seoTitle: "U.S.-Africa Minerals Diplomacy: From Strategy to Projects",
+    metaDescription: "Africa's mineral potential will draw lasting U.S. investment when sponsors show credible projects, viable infrastructure and a clear route to market.",
+    cover: "/artigo1.webp",
     coverCaption: "Panel discussion, CSIS forum on U.S.-Africa minerals diplomacy, September 2026.",
     keywords: ["U.S.-Africa minerals diplomacy", "critical minerals investment Africa", "Africa mining investment", "minerals corridor investment", "Lobito corridor", "African mineral projects U.S. investors"],
     takeaways: [
@@ -504,7 +510,7 @@ export const insights = [
   },
   {
     slug: "mozambique-next-investment-chapter",
-    cover: "/mozambique.jpeg",
+    cover: "/mozambique.webp",
     coverCaption: "ExxonMobil.",
     category: "Resources",
     date: "September 2026",
@@ -512,7 +518,8 @@ export const insights = [
     excerpt: "Mozambique is entering a potentially important new phase in its investment story, with greater emphasis on project preparation, infrastructure finance and private-sector participation.",
     dek: "Mozambique is entering a potentially important new phase in its investment story, with greater emphasis on project preparation, infrastructure finance and private-sector participation.",
     readTime: "5 min read",
-    seoTitle: "Mozambique Investment: From Strategic Projects to Bankable Opportunities",
+    seoTitle: "Mozambique Investment: From Strategic Projects to Bankable Deals",
+    metaDescription: "Mozambique is entering a new investment phase focused on project preparation, infrastructure finance and private-sector participation.",
     keywords: ["Mozambique investment", "Mozambique infrastructure", "Mozambique bankable projects", "African Development Bank Mozambique", "Nacala corridor", "Mozambique road program"],
     takeaways: [
       "Mozambique is shifting toward project preparation and feasibility work, addressing the long-standing gap between strategic ambition and bankable projects.",
@@ -550,7 +557,7 @@ export const insights = [
   },
   {
     slug: "sadc-gulf-capital-opportunity",
-    cover: "/sadc.jpeg",
+    cover: "/sadc.webp",
     coverCaption: "Maputo-Katembe Bridge, Mozambique.",
     category: "Resources",
     date: "September 2026",
@@ -558,7 +565,8 @@ export const insights = [
     excerpt: "Gulf capital is becoming more strategic, and Southern Africa sits at the intersection of energy security, critical minerals, logistics, food systems and long-term infrastructure demand.",
     dek: "Gulf capital is becoming more strategic, and Southern Africa sits at the intersection of energy security, critical minerals, logistics, food systems and long-term infrastructure demand.",
     readTime: "6 min read",
-    seoTitle: "SADC and Gulf Capital: Mozambique and Angola's Investment Opportunity",
+    seoTitle: "SADC and Gulf Capital: Mozambique and Angola Opportunity",
+    metaDescription: "Gulf capital is getting more strategic, and Mozambique and Angola sit where energy, minerals, logistics and food systems meet.",
     keywords: ["SADC investment", "Angola investment", "Gulf capital Africa", "Lobito corridor", "GCC SADC trade", "Mozambique Gulf investment"],
     takeaways: [
       "GCC-SADC trade reached about US$38.6 billion in 2024, with Gulf engagement shifting from raw materials toward infrastructure, energy, agriculture, mining and technology.",

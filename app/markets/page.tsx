@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function Markets(){
- return <main>
+ return <div>
   <div className="container pt-8 pb-14 md:pt-10 md:pb-16"><div className="max-w-3xl"><p className="eyebrow">Markets</p><h1 className="display text-5xl md:text-6xl text-navy mt-4">Strategic corridors for growth.</h1><p className="mt-6 text-lg leading-8 text-slate-600">ANCAPA's market strategy starts with U.S. capital and capability, then builds execution pathways in regions where structural demand and strategic relevance are converging.</p></div></div>
   <div className="container pb-24 grid gap-6">{regions.map((r,i)=>{const Icon=[Network,ShieldCheck,TrendingUp][i]; const themes=r.text.split(", "); return <section key={r.slug} className="group relative overflow-hidden rounded-3xl p-8 md:p-10 grid lg:grid-cols-[.4fr_.6fr] gap-8 lg:gap-14 text-white border border-white/10 shadow-[0_20px_50px_-25px_rgba(8,35,58,.6)]" style={{background:`radial-gradient(circle at ${20+i*30}% 15%, rgba(185,151,88,.32), transparent 45%), linear-gradient(160deg, #0e3555, #061826 75%)`}}>
     <span className="display absolute -top-8 right-2 text-[9rem] leading-none text-white/[.06] select-none">0{i+1}</span>
@@ -37,11 +37,11 @@ export default function Markets(){
   <div className="container pb-24 grid lg:grid-cols-[.8fr_1.2fr] gap-10 items-start">
    <div><p className="eyebrow">How we choose</p><h2 className="display text-3xl md:text-4xl text-navy mt-3">Three questions before any market.</h2></div>
    <ol className="space-y-5 text-slate-700 leading-7">
-    <li className="flex gap-4"><span className="display text-3xl text-gold">1</span><span>Is there a real buyer or user for what gets built? Resources in the ground are not demand.</span></li>
-    <li className="flex gap-4"><span className="display text-3xl text-gold">2</span><span>Does a U.S. company, technology or source of capital fit the project? If not, we are not the right partner.</span></li>
-    <li className="flex gap-4"><span className="display text-3xl text-gold">3</span><span>Is there a local partner who can execute? Global capital only works with local execution.</span></li>
+    <li className="flex gap-4"><span className="display text-3xl text-gold-ink">1</span><span>Is there a real buyer or user for what gets built? Resources in the ground are not demand.</span></li>
+    <li className="flex gap-4"><span className="display text-3xl text-gold-ink">2</span><span>Does a U.S. company, technology or source of capital fit the project? If not, we are not the right partner.</span></li>
+    <li className="flex gap-4"><span className="display text-3xl text-gold-ink">3</span><span>Is there a local partner who can execute? Global capital only works with local execution.</span></li>
    </ol>
   </div>
   <div className="container pb-24"><RelatedInsights slugs={insights.filter(i=>i.body).slice(0,3).map(i=>i.slug)} eyebrow="Latest analysis" title="What we are reading in these markets." /></div>
- </main>
+ </div>
 }

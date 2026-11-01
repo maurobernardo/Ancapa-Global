@@ -10,3 +10,17 @@
   .card{box-shadow:none!important;border:1px solid #e2e8f0!important}
   a{color:inherit!important}
 }
+
+/* Accessibility: skip link, visible keyboard focus, darker gold for text on light backgrounds, reduced motion */
+:root{--gold-ink:#8a6a2a}
+.text-gold-ink{color:var(--gold-ink)}
+.skip-link{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--navy);color:#fff;padding:.7rem 1.1rem;border-radius:999px;font-size:.875rem;font-weight:600;transition:top .2s}
+.skip-link:focus{top:1rem}
+:focus-visible{outline:2px solid var(--navy);outline-offset:3px;border-radius:4px}
+.bg-navy :focus-visible,.bg-\[\#071c2c\] :focus-visible,footer :focus-visible{outline-color:#fff}
+main:focus{outline:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+}

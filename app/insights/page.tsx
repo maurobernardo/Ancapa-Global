@@ -22,7 +22,7 @@ function Cover({ i, sizes, className = "" }: { i: Insight; sizes: string; classN
 }
 
 function Meta({ i }: { i: Insight }) {
-  return <div className="mt-auto pt-6 flex items-center justify-between text-xs text-slate-400">
+  return <div className="mt-auto pt-6 flex items-center justify-between text-xs text-slate-500">
     <span className="flex items-center gap-3">{i.date}{i.readTime && <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{i.readTime}</span>}</span>
     {i.body && <span className="chip text-navy py-1.5 px-3">Read article <ArrowRight className="h-3.5 w-3.5" /></span>}
   </div>;
@@ -55,7 +55,7 @@ export default function Insights() {
     i.body ? <Link key={i.slug} href={`/insights/${i.slug}`} className={`group ${cls} hover:-translate-y-1 transition`}>{children}</Link>
            : <article key={i.slug} className={cls}>{children}</article>;
 
-  return <main className="container pt-8 pb-14 md:pt-10 md:pb-16">
+  return <div className="container pt-8 pb-14 md:pt-10 md:pb-16">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listLd) }} />
     <div className="max-w-3xl">
       <p className="eyebrow">Insights</p>
@@ -85,5 +85,5 @@ export default function Insights() {
         </>))}
       </div>
     </div>
-  </main>;
+  </div>;
 }

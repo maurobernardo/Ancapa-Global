@@ -34,7 +34,7 @@ export default async function OpportunityPage({ params }: { params: Promise<{slu
   { "@type": "ListItem", position: 3, name: o.title, item: `${siteUrl}/opportunities/${o.slug}` },
  ] };
 
- return <main className="container pt-8 pb-14 md:pt-10 md:pb-16">
+ return <div className="container pt-8 pb-14 md:pt-10 md:pb-16">
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([faqLd, crumbLd]) }} />
   <Link href="/opportunities" className="chip text-slate-600"><ArrowLeft className="h-4 w-4"/>All opportunities</Link>
   <div className="mt-12 grid lg:grid-cols-[1.2fr_.8fr] gap-12">
@@ -49,7 +49,7 @@ export default async function OpportunityPage({ params }: { params: Promise<{slu
       <h2>Why it matters now</h2>
       {d.why.map((p,i)=><p key={i}>{p}</p>)}
       <h2>What we look for</h2>
-      <ul className="not-prose mt-4 space-y-3">{d.lookFor.map(x=><li key={x} className="flex gap-3 text-slate-700 leading-7"><CheckCircle2 className="h-5 w-5 mt-1 shrink-0 text-gold"/>{x}</li>)}</ul>
+      <ul className="not-prose mt-4 space-y-3">{d.lookFor.map(x=><li key={x} className="flex gap-3 text-slate-700 leading-7"><CheckCircle2 className="h-5 w-5 mt-1 shrink-0 text-gold-ink"/>{x}</li>)}</ul>
       <h2>How ANCAPA engages</h2>
       <p>{d.engage}</p>
      </>}
@@ -60,18 +60,18 @@ export default async function OpportunityPage({ params }: { params: Promise<{slu
     </div>
    </div>
    <aside className="card p-7 h-fit lg:sticky lg:top-28">
-    <div className="text-xs uppercase tracking-widest text-slate-400">Opportunity profile</div>
+    <div className="text-xs uppercase tracking-widest text-slate-500">Opportunity profile</div>
     <dl className="mt-6 space-y-5 text-sm">
-     <div><dt className="text-slate-400">Region</dt><dd className="mt-1 font-semibold text-navy">{o.region}</dd></div>
-     <div><dt className="text-slate-400">Sector</dt><dd className="mt-1 font-semibold text-navy">{o.sector}</dd></div>
-     <div><dt className="text-slate-400">Type</dt><dd className="mt-1 font-semibold text-navy">{o.type}</dd></div>
-     <div><dt className="text-slate-400">Stage</dt><dd className="mt-1 font-semibold text-navy">{o.stage}</dd></div>
-     <div><dt className="text-slate-400">Seeking</dt><dd className="mt-1 font-semibold text-navy">{o.ask}</dd></div>
+     <div><dt className="text-slate-500">Region</dt><dd className="mt-1 font-semibold text-navy">{o.region}</dd></div>
+     <div><dt className="text-slate-500">Sector</dt><dd className="mt-1 font-semibold text-navy">{o.sector}</dd></div>
+     <div><dt className="text-slate-500">Type</dt><dd className="mt-1 font-semibold text-navy">{o.type}</dd></div>
+     <div><dt className="text-slate-500">Stage</dt><dd className="mt-1 font-semibold text-navy">{o.stage}</dd></div>
+     <div><dt className="text-slate-500">Seeking</dt><dd className="mt-1 font-semibold text-navy">{o.ask}</dd></div>
     </dl>
     <Link href="/contact" className="btn btn-dark mt-8 w-full">Request discussion <ArrowRight className="h-4 w-4 ml-2"/></Link>
     {platform && <Link href={`/platforms/${platform.slug}`} className="mt-4 flex items-center justify-between rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-navy hover:border-gold transition">{platform.name}<ArrowRight className="h-4 w-4"/></Link>}
    </aside>
   </div>
   {d && <div className="mt-20 pt-14 border-t border-slate-200"><RelatedInsights slugs={d.insights} eyebrow="Our analysis" title="The thinking behind this opportunity." /></div>}
- </main>
+ </div>
 }

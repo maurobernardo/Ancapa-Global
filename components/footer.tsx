@@ -11,6 +11,6 @@ export function Footer(){
      <div><h3 className="text-sm font-semibold mb-4">Global corridors</h3><div className="space-y-3 text-sm text-slate-300"><p>United States → Africa</p><p>United States → Caribbean</p><p>United States → Southeast Asia</p></div></div>
      <div><h3 className="text-sm font-semibold mb-4">Contact</h3><div className="space-y-3 text-sm text-slate-300"><p className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0"/>{company.location}</p><Link href="/contact" className="block hover:text-white transition">Start a conversation →</Link></div></div>
    </div>
-   <div className="container border-t border-white/10 py-5 text-xs text-slate-400 flex flex-col md:flex-row md:justify-between gap-2"><span>© {new Date().getFullYear()} ANCAPA Global Partners. All rights reserved.</span><span>Global Capital. Local Execution.</span></div>
+   <div className="container border-t border-white/10 py-5 text-xs text-slate-400 flex flex-col md:flex-row md:justify-between gap-2"><span>© {new Date().getFullYear()} ANCAPA Global Partners. All rights reserved.</span><span className="flex items-center gap-4"><Link href="/privacy" className="hover:text-white underline-offset-2 hover:underline">Privacy Policy</Link><span>Global Capital. Local Execution.</span></span></div>
  </footer>
 }
