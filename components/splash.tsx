@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const KEY = "ancapa-splash";
 const MIN_MS = 800;   // shortest time the opening splash stays up
@@ -12,6 +12,7 @@ export function Splash() {
   const path = usePathname();
   const [phase, setPhase] = useState<"show" | "hide" | "gone">("show");
   const [nav, setNav] = useState(false);
+  const timers = useRef<{ show?: ReturnType<typeof setTimeout>; cap?: ReturnType<typeof setTimeout> }>({});
 
   // Opening splash: wait for the page to finish loading, but never flash for less than MIN_MS
   useEffect(() => {
@@ -28,24 +29,26 @@ export function Splash() {
     return () => { clearTimeout(t1); clearTimeout(t2); window.removeEventListener("load", done); };
   }, []);
 
-  // Navigation splash: new page arrived, hide it
-  useEffect(() => { setNav(false); }, [path]);
+  // The new page arrived: cancel the pending splash (so it can never pop up over a page that is already open) and hide it
+  useEffect(() => {
+    clearTimeout(timers.current.show); clearTimeout(timers.current.cap);
+    setNav(false);
+  }, [path]);
 
   // Navigation splash: internal link clicked and the page is still not there after NAV_DELAY
   useEffect(() => {
-    let show: ReturnType<typeof setTimeout>, cap: ReturnType<typeof setTimeout>;
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const a = (e.target as Element).closest("a");
       if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
       const url = new URL(a.href, location.href);
       if (url.origin !== location.origin || (url.pathname === location.pathname && url.search === location.search)) return;
-      clearTimeout(show); clearTimeout(cap);
-      show = setTimeout(() => setNav(true), NAV_DELAY);
-      cap = setTimeout(() => setNav(false), 10000); // never leave it stuck
+      clearTimeout(timers.current.show); clearTimeout(timers.current.cap);
+      timers.current.show = setTimeout(() => setNav(true), NAV_DELAY);
+      timers.current.cap = setTimeout(() => setNav(false), 10000); // never leave it stuck
     };
     document.addEventListener("click", onClick, true); // capture: Next's <Link> cancels the click before it bubbles
-    return () => { document.removeEventListener("click", onClick, true); clearTimeout(show); clearTimeout(cap); };
+    return () => { document.removeEventListener("click", onClick, true); clearTimeout(timers.current.show); clearTimeout(timers.current.cap); };
   }, []);
 
 
