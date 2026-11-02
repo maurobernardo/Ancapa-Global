@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
-import { RouteProgress } from "@/components/route-progress";
+import { Splash } from "@/components/splash";
 import { Analytics } from "@/components/analytics";
 import { company, platforms } from "@/lib/data";
 import { disambiguation, orgId } from "@/lib/seo";
@@ -72,11 +72,12 @@ const jsonLd = [
 ];
 
 export default function RootLayout({children}:{children:React.ReactNode}){
- return <html lang="en" className={inter.variable}><body>
+ return <html lang="en" className={inter.variable} suppressHydrationWarning><body>
   <link rel="alternate" type="application/rss+xml" title="ANCAPA Insights" href="/insights/feed.xml" />
   <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   <a href="#main" className="skip-link">Skip to content</a>
-  <RouteProgress/>
+  <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('ancapa-splash'))document.documentElement.classList.add('no-splash')}catch(e){}" }} />
+  <Splash/>
   <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><Analytics/>
  </body></html>
 }
