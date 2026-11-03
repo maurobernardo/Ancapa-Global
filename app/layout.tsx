@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { Splash } from "@/components/splash";
 import { Analytics } from "@/components/analytics";
+import { PolicyPopup } from "@/components/policy-popup";
 import { company, platforms } from "@/lib/data";
 import { disambiguation, orgId } from "@/lib/seo";
 
@@ -78,6 +79,6 @@ export default function RootLayout({children}:{children:React.ReactNode}){
   <a href="#main" className="skip-link">Skip to content</a>
   <script dangerouslySetInnerHTML={{ __html: "try{if(sessionStorage.getItem('ancapa-splash'))document.documentElement.classList.add('no-splash')}catch(e){}" }} />
   <Splash/>
-  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><Analytics/>
+  <Header/><main id="main" tabIndex={-1}>{children}</main><Footer/><MobileCta/><Analytics/><PolicyPopup/>
  </body></html>
 }

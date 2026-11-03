@@ -26,7 +26,7 @@ export default function Privacy() {
 
         <h2>Cookies and tracking</h2>
         {analytics
-          ? <p>We do not use advertising cookies or social media trackers. To count visits we use Umami, a privacy-focused analytics tool. It does not use cookies and does not build profiles of individual visitors. It records which pages are viewed, the referring site, the type of device and browser, and the approximate country. We do not collect it if your browser sends a Do Not Track signal. Our hosting and security provider may set technical cookies needed to deliver the site and protect it from abuse.</p>
+          ? <p>We do not use advertising cookies or social media trackers. To count visits we use Umami, a privacy-focused analytics tool. It does not use cookies and does not build profiles of individual visitors. It records which pages are viewed, the referring site, the type of device and browser, and the approximate country. We do not collect it if your browser sends a Do Not Track signal. When you first visit, a pop-up asks you to accept this policy and our Terms of Use. If you decline, we turn the visit counter off for your browser, and you can change your mind at any time with the "Privacy choices" link in the footer. Our hosting and security provider may set technical cookies needed to deliver the site and protect it from abuse.</p>
           : <p>We do not use advertising cookies, analytics scripts or social media trackers. Our hosting and security provider may set technical cookies needed to deliver the site and protect it from abuse.</p>}
 
         <h2>Why we use it</h2>
