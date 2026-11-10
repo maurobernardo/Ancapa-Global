@@ -50,7 +50,7 @@ export const opportunityDetail: Record<string, {
       "Financing that uses guarantees or development finance where the commercial risk is too heavy to carry alone.",
     ],
     engage: "We map who will actually move freight, then check whether the infrastructure plan matches it. Where it does, we help the sponsor prepare the project and line up financing, and we bring in U.S. suppliers of rail, port and handling equipment.",
-    insights: ["lobito-corridor-investment-frontier", "sadc-gulf-capital-opportunity", "africa-second-mining-boom", "angola-mozambique-gas-infrastructure-investment-opportunities"],
+    insights: ["tanzania-railway-lng-investment-frontier", "lobito-corridor-investment-frontier", "sadc-gulf-capital-opportunity", "africa-second-mining-boom"],
   },
   "digital-platform-sea": {
     platform: "digital",

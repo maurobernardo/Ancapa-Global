@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { articlesFor } from "@/lib/related";
+import { CoverFallback } from "./cover-fallback";
 
 // Grid of article cards used to cross-link analysis from articles, platforms, opportunities and markets
 export function RelatedInsights({ slugs, eyebrow = "Related analysis", title = "Read more from ANCAPA Insights." }: { slugs: string[]; eyebrow?: string; title?: string }) {
@@ -13,7 +14,7 @@ export function RelatedInsights({ slugs, eyebrow = "Related analysis", title = "
     <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {items.map((i) => <Link key={i.slug} href={`/insights/${i.slug}`} className="group card overflow-hidden flex flex-col hover:-translate-y-1 transition">
         <div className="relative aspect-[2/1] overflow-hidden bg-slate-100">
-          {i.cover && <Image src={i.cover} alt={i.coverCaption || i.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" />}
+          {i.cover ? <Image src={i.cover} alt={i.coverCaption || i.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /> : <CoverFallback />}
           <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[.65rem] font-bold uppercase tracking-widest text-navy shadow-sm">{i.category}</span>
         </div>
         <div className="p-5 flex flex-col flex-1">

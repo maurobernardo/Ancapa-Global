@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { insights } from "@/lib/data";
+import { CoverFallback } from "@/components/cover-fallback";
 import { abs, isoDate, orgId, siteUrl, pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({ title: "Insights", description: "Commercial intelligence for strategic markets: perspectives on capital formation, critical minerals corridors and digital infrastructure across ANCAPA's focus markets.", path: "/insights" });
@@ -12,7 +13,7 @@ type Insight = (typeof insights)[number];
 // 2:1 frame: the wide covers (some carry banner text) show whole; the squarer ones lose a little height.
 function Cover({ i, sizes, className = "" }: { i: Insight; sizes: string; className?: string }) {
   return <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
-    {i.cover && <Image src={i.cover} alt={i.coverCaption || i.title} fill sizes={sizes} className="object-cover transition duration-700 group-hover:scale-[1.04]" />}
+    {i.cover ? <Image src={i.cover} alt={i.coverCaption || i.title} fill sizes={sizes} className="object-cover transition duration-700 group-hover:scale-[1.04]" /> : <CoverFallback />}
     <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[.65rem] font-bold uppercase tracking-widest text-navy shadow-sm">{i.category}</span>
   </div>;
 }
